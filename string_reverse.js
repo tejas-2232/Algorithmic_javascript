@@ -32,6 +32,20 @@ function reverseString(str) {
     return joinArray; // "olleh"
 
 }
-console.log(reverseString("hello"));
+//console.log(reverseString("hello"));
 
 // reverseString("hello");
+
+
+// 2. method: using for LOOP
+
+function reversestring(text){
+
+    let result = "";
+
+    for(let i=text.length-1; i>=0; i--){
+        result= result+text[i];
+    }
+
+    return result
+}
