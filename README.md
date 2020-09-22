@@ -1,3 +1,7 @@
 # Algorithmic_javascript
 
-## Algorithms practiced using JS
+__Algorithms practiced using JS__
+
+## List of problems
+1. String reversing  
+2. Vowel counter 
