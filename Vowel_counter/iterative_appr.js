@@ -13,3 +13,5 @@ function vowelcnt(text){
 
  return counter;
 }
+
+console.log(vowelcnt("i love you"))
