@@ -5,6 +5,7 @@ __Algorithms practiced using JS__
 ## List of problems
 1. String reversing  
 2. Vowel counter 
+3. Finding the Most Recurring Character
 
 ## Explanation
 <b>1. String reversing</b>
@@ -23,3 +24,20 @@ __The challenge:__ Given a string of text, write an algorithm that returns the t
     >should return 'smhtirogla
 
 <hr>
+
+<b>2. Vowel counter </b>
+
+
+
+
+<b>3. Finding the Most Recurring Characterg</b>
+
+<p> In this challenge, we will be dealing with strings, arrays and objects. We will learn to manipulate these data types using various methods that'd bring us to a working solution in the end.</p>
+
+__The challenge:__ Given a string of text, find and return the most recurring character. e.g
+
+```js
+maxRecurringChar('aabacada') // will return 'a'
+``` 
+
+__Algorithmic Thinking:__ <p> From the challenge statement, we can infer that our function has only one parameter; the string of text.<br> We need to somehow keep track of every character in the string as well as the number of times it exists. <br> This we would describe as character mapping. Once we successfully create such a map, we can easily determine which character has the highest occurence. </p>
