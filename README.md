@@ -22,12 +22,6 @@ __The challenge:__ Given a string of text, write an algorithm that returns the t
 
 <hr>
 
-__The challenge:__ Given a string of text, write an algorithm that returns the text received in a reversed format. E.g
-
-```js
-reverseString('algorithms') // should return 'smhtirogla'
-```
-
 __Algorithmic Thinking:__
 <p>
 The process here is quite simple and straight forward. Our function will receive only one parameter i.e the string to be reversed.
@@ -36,14 +30,17 @@ Next, we would have to manipulate the characters in this string logically in ord
 </p>
 
 <hr>
-
+<hr>
 <b>2. Vowel counter </b>
 
 __The challenge:__ 
 
 
-<hr>
+__Algorithmic Thinking:__ <p> </p>
 
+
+<hr>
+<hr>
 <b>3. Finding the Most Recurring Characterg</b>
 
 <p> In this challenge, we will be dealing with strings, arrays and objects. We will learn to manipulate these data types using various methods that'd bring us to a working solution in the end.</p>
@@ -55,3 +52,46 @@ maxRecurringChar('aabacada') // will return 'a'
 ``` 
 
 __Algorithmic Thinking:__ <p> From the challenge statement, we can infer that our function has only one parameter; the string of text.<br> We need to somehow keep track of every character in the string as well as the number of times it exists. <br> This we would describe as character mapping. Once we successfully create such a map, we can easily determine which character has the highest occurence. </p>
+
+<b>3. Name </b>
+
+__The challenge:__ 
+
+
+__Algorithmic Thinking:__ <p> </p>
+
+
+<hr>
+<hr>
+<b>4. Name </b>
+
+__The challenge:__ 
+
+
+__Algorithmic Thinking:__ <p> </p>
+
+
+<hr>
+<hr>
+
+<b>5. Name </b>
+
+__The challenge:__ 
+
+
+__Algorithmic Thinking:__ <p> </p>
+
+
+<hr>
+<hr>
+
+<b>6. Name </b>
+
+__The challenge:__ 
+
+
+__Algorithmic Thinking:__ <p> </p>
+
+
+<hr>
+<hr>
