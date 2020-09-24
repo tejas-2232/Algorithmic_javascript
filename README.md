@@ -20,15 +20,29 @@ __The challenge:__ Given a string of text, write an algorithm that returns the t
  // should return "mhtirogla"
 ```
 
->reverseString('algorithms') 
-    >should return 'smhtirogla
+<hr>
+
+__The challenge:__ Given a string of text, write an algorithm that returns the text received in a reversed format. E.g
+
+```js
+reverseString('algorithms') // should return 'smhtirogla'
+```
+
+__Algorithmic Thinking:__
+<p>
+The process here is quite simple and straight forward. Our function will receive only one parameter i.e the string to be reversed.
+
+Next, we would have to manipulate the characters in this string logically in order to return the string in reverse.
+</p>
 
 <hr>
 
 <b>2. Vowel counter </b>
 
+__The challenge:__ 
 
 
+<hr>
 
 <b>3. Finding the Most Recurring Characterg</b>
 
