@@ -111,12 +111,27 @@ __Algorithmic Thinking:__ <p> From the challenge statement, we can infer that ou
 <hr>
 <hr>
 <b>4. Sentence Capitalization</b>
+<p> Often during presentation situation arises where we need to manipulate the letter casing of strings within our application. Javascript offers two popular methods designed for this purpose:
 
-__The challenge:__ 
+    1.toUpperCase(): this method returns the string passed in as an argument converted in uppercase letters. <br>
+    
+    2.toLowerCase(): this method returns the string passed in as an argument converted to lowercase letters. 
+
+__The challenge:__ Given a sentence containing two or more words, return the equivalent of the sentence when capitalized. E.g
+```js
+capitalSentence("a cat and a dog") // would return "A Cat And A Dog"
+```
 
 
-__Algorithmic Thinking:__ <p> </p>
+__Algorithmic Thinking:__ <p>
+At a glance this may seem like a very simple challenge, but it actually isn’t when considered carefully.
 
+Working through the challenge, it seems that we need to write a function that'd receive the sentence to be converted as an argument 
+Next,we go through every word in sentence and capitilize every first letter of word. This brings concept of LOOP to mind
+ </p>
+
+
+__Code Implementation:__
 
 <hr>
 <hr>
