@@ -29,6 +29,19 @@ The process here is quite simple and straight forward. Our function will receive
 Next, we would have to manipulate the characters in this string logically in order to return the string in reverse.
 </p>
 
+__Code Implementation:__
+We will now explore ways to solve this challenge below. They are:
+
+    1.Chaining in-built methods
+    2.Using a For-loop
+
+*1.Chaining in-built methods:*
+
+        
+    The **.split()** method is used to split a string into an array of characters. It receives one argument which specifies the separator that determines where every split occurs.
+<hr>
+
+    The .reverse() method reverses the order of the elements in an array
 <hr>
 <hr>
 <b>2. Vowel counter </b>
@@ -52,6 +65,8 @@ maxRecurringChar('aabacada') // will return 'a'
 ``` 
 
 __Algorithmic Thinking:__ <p> From the challenge statement, we can infer that our function has only one parameter; the string of text.<br> We need to somehow keep track of every character in the string as well as the number of times it exists. <br> This we would describe as character mapping. Once we successfully create such a map, we can easily determine which character has the highest occurence. </p>
+
+
 
 <b>3. Name </b>
 
