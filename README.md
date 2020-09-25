@@ -45,6 +45,9 @@ We will now explore ways to solve this challenge below. They are:
 
 
 
+    The **.join()** method is used to combine the elements of an array into a string. It receives one argument which specifies the separator. When none is supplied, it defaults to a comma.
+
+
 
 
 
