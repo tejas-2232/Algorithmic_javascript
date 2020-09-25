@@ -64,6 +64,23 @@ We will now explore ways to solve this challenge below. They are:
     }
 ```
 
+*2.For-Loop Way:*
+
+<p> For loops are used to execute a piece of code as long as a condition is met. In the solution below, we use a decrementing for-loop to run through the string received and append each character to another variable in reverse order. See how this is done below</p>
+
+```js
+    function reverseString(text){
+        let result;
+
+        for(let i=text.length-1;i>=0,i--){
+            result+=text[i];
+        }
+        return result;
+    }
+```
+
+
+
 <hr>
 <hr>
 <b>2. Vowel counter </b>
