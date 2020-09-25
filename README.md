@@ -1,5 +1,14 @@
 # Algorithmic_javascript
 
+### This is open-source Project
+__If you want to contribute then follow theses steps__
+>1.fork the repo. <br>2.take the algorithm which you want to add to list<br> 3.Make sure it's not repeated. <br> 4. Be ready with your code in *JAVASCRIPT* <br> 5.The added algorithm should have following sub-sections <br>
+    > 5.1 A short Introduction
+      5.2 The challenge
+      5.3 Algorithmic thinking
+      5.4 Code Implementation
+
+
 __Algorithms practiced using JS__
 
 ## List of problems
@@ -44,14 +53,16 @@ We will now explore ways to solve this challenge below. They are:
     The .reverse() method reverses the order of the elements in an array
 
 
-
     The **.join()** method is used to combine the elements of an array into a string. It receives one argument which specifies the separator. When none is supplied, it defaults to a comma.
 
 
+<p> In the code snippet below we use these methods to create a one-line solution by chaining them in succession to split the received text into an array of characters, reverse the order of array’s elements and join the elements of the reversed array to produce the reversed text.</p>
 
-
-
-
+```js
+    function reverseString(text){
+        return text.split("").reverse().join("")
+    }
+```
 
 <hr>
 <hr>
