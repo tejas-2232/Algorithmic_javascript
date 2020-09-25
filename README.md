@@ -39,9 +39,17 @@ We will now explore ways to solve this challenge below. They are:
 
         
     The **.split()** method is used to split a string into an array of characters. It receives one argument which specifies the separator that determines where every split occurs.
-<hr>
+
 
     The .reverse() method reverses the order of the elements in an array
+
+
+
+
+
+
+
+
 <hr>
 <hr>
 <b>2. Vowel counter </b>
