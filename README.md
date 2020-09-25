@@ -15,6 +15,8 @@ __Algorithms practiced using JS__
 1. String reversing  
 2. Vowel counter 
 3. Finding the Most Recurring Character
+4. Sentence Capitalization
+5. Palindromes
 
 ## Explanation
 <b>1. String reversing</b>
@@ -106,18 +108,9 @@ maxRecurringChar('aabacada') // will return 'a'
 __Algorithmic Thinking:__ <p> From the challenge statement, we can infer that our function has only one parameter; the string of text.<br> We need to somehow keep track of every character in the string as well as the number of times it exists. <br> This we would describe as character mapping. Once we successfully create such a map, we can easily determine which character has the highest occurence. </p>
 
 
-
-<b>3. Name </b>
-
-__The challenge:__ 
-
-
-__Algorithmic Thinking:__ <p> </p>
-
-
 <hr>
 <hr>
-<b>4. Name </b>
+<b>4. Sentence Capitalization</b>
 
 __The challenge:__ 
 
@@ -128,18 +121,30 @@ __Algorithmic Thinking:__ <p> </p>
 <hr>
 <hr>
 
-<b>5. Name </b>
+<b>5. Palindromes </b>
 
 __The challenge:__ 
 
 
 __Algorithmic Thinking:__ <p> </p>
+
 
 
 <hr>
 <hr>
 
 <b>6. Name </b>
+
+__The challenge:__ 
+
+
+__Algorithmic Thinking:__ <p> </p>
+
+
+<hr>
+<hr>
+
+<b>7. Name </b>
 
 __The challenge:__ 
 
