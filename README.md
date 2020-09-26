@@ -133,8 +133,14 @@ Next,we go through every word in sentence and capitilize every first letter of w
 
 __Code Implementation:__
 
+1. Using .forEach Method:
+    The .forEach method in javascript runs a provided function on each element within array
+
+2. Using .map and .slice method:
+    The .map method is used to create a new array with the results gotten from calling a provided function on every element in the array on which it is called.
 <hr>
 <hr>
+
 
 <b>5. Palindromes </b>
 
