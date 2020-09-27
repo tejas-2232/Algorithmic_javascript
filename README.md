@@ -181,7 +181,14 @@ Finally , we return True or False depending on the result of evaluation. <br><br
 True: when it's palindrom <br>
 False: Otherwise </p>
 
+__code Implementation:__ <p>  In this challenge, we'd consider two, yet three ways to implement this as highlighted below:
 
+    1. An Intuitive Approach
+    2. Looping Through and Comparing Characters
+    3. Looping Through and Comparing Characters(Optimized)
+
+
+</p>
 
 <hr>
 <hr>
