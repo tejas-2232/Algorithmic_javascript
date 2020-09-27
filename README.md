@@ -175,7 +175,11 @@ __The challenge:__ <p>Given a string of text, return true or false indicating wh
     palindromeChecker('racecar') // will return true
 ```
 
-__Algorithmic Thinking:__ <p> </p>
+__Algorithmic Thinking:__ <p> According to challenge,"Given a string of text" implies that our funciton must have string-typed parameter which we call "text" <br><br>
+Next we will have to check if the string is paindrome or not. To do this we have to reverse the string and compare that rerverser string with the original one(i.e the one which is passed as argument) <br> <br>
+Finally , we return True or False depending on the result of evaluation. <br><br>
+True: when it's palindrom <br>
+False: Otherwise </p>
 
 
 
