@@ -146,8 +146,21 @@ __Code Implementation:__
             return word[0].toUpperCase() + word.slice(1)
     })
         return capsArray.join(' ')
-}
+    }
+
+3. Using .map() and .replace() method:
+
+    ```js
+    function capSentence(text){
+        let wordsArray =text.toLowerCase().split(' ')
+        let capsArray = wordsArray.map(word=>{
+            return word.replce(word[0],word[0].toUpperCase())
+        } )
+
+        return capsArray.joint(' ')
+    }
     ```
+    
 <hr>
 <hr>
 
