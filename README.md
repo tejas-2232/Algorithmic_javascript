@@ -190,6 +190,11 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
 
 </p>
 
+1. An Intuitive Approach:
+
+2. Looping Through and Comparing Characters:
+
+3. Looping Through and Comparing Characters(Optimized)
 <hr>
 <hr>
 
