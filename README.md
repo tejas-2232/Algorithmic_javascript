@@ -160,15 +160,20 @@ __Code Implementation:__
         return capsArray.joint(' ')
     }
     ```
-    
+
 <hr>
 <hr>
 
 
 <b>5. Palindromes </b>
+   
+*What is a Palindrome:* A palindrome is a word, number, or other sequence of characters which reads the same backward as forward, such as "madam" or "racecar". <br>
 
-__The challenge:__ 
+__The challenge:__ <p>Given a string of text, return true or false indicating whether or not the text is a palindrome. e.g </p>
 
+```js
+    palindromeChecker('racecar') // will return true
+```
 
 __Algorithmic Thinking:__ <p> </p>
 
