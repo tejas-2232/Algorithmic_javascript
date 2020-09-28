@@ -191,6 +191,14 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
 </p>
 
 1. An Intuitive Approach:
+    ```js
+    
+    function palindromeCheck(text){
+        var reverseText= text.toLowercase().split(' ').reverse().join(' ' )
+
+        return text=== reverseText
+    }
+    ```
 
 2. Looping Through and Comparing Characters:
 
