@@ -199,18 +199,27 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
         return text=== reverseText
     }
     ```
+Let's unveil the "mysteries":
+
+* Firstly, the function accepts the string that is to be tested
+* Next, all the letters are converted to lowercase,then <font color="red" >.split()</font> method is called on string that is received as text 
+* Next, we call <font color="red" > .reverse()</font> to re-order the array elements in reverse.
+
+* After that <font color="red" >.join()</font> is called on reversed array to form a whole string.
+<br>
 
 2. Looping Through and Comparing Characters:
+
     ```js
     function palindromeChecker(text) {
-    let charArray = text.toLowerCase().split('')
+        let charArray = text.toLowerCase().split('')
 
-    let result = charArray.every((letter, index) => {
-        return letter === charArray[charArray.length - index - 1];
+        let result = charArray.every((letter, index) => {
+            return letter === charArray[charArray.length - index - 1];
     })
 
-    return result
-}
+        return result
+    }
     ```
 
 3. Looping Through and Comparing Characters(Optimized):
@@ -218,13 +227,13 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
 
     ```js
     function palindromeChecker(text) {
- var textLen = text.length;
- for (var i = 0; i < textLen/2; i++) {
-   if (text[i] !== text[textLen - 1 - i]) {
+    var textLen = text.length;
+        for (var i = 0; i < textLen/2; i++) {
+            if (text[i] !== text[textLen - 1 - i]) {
        return false;
    }
  }
- return true;
+    return true;
 }
     ```
 <hr>
