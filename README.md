@@ -208,6 +208,7 @@ Let's unveil the "mysteries":
 * After that <font color="red" >.join()</font> is called on reversed array to form a whole string.
 <br>
 
+
 2. Looping Through and Comparing Characters:
 
     ```js
@@ -227,14 +228,14 @@ Let's unveil the "mysteries":
 
     ```js
     function palindromeChecker(text) {
-    var textLen = text.length;
+        var textLen = text.length;
         for (var i = 0; i < textLen/2; i++) {
             if (text[i] !== text[textLen - 1 - i]) {
-       return false;
-   }
- }
+                return false;
+            }
+        }
     return true;
-}
+    }
     ```
 <hr>
 <hr>
