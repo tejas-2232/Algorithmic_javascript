@@ -213,7 +213,20 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
 }
     ```
 
-3. Looping Through and Comparing Characters(Optimized)
+3. Looping Through and Comparing Characters(Optimized):
+
+
+    ```js
+    function palindromeChecker(text) {
+ var textLen = text.length;
+ for (var i = 0; i < textLen/2; i++) {
+   if (text[i] !== text[textLen - 1 - i]) {
+       return false;
+   }
+ }
+ return true;
+}
+    ```
 <hr>
 <hr>
 
