@@ -201,6 +201,17 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
     ```
 
 2. Looping Through and Comparing Characters:
+    ```js
+    function palindromeChecker(text) {
+    let charArray = text.toLowerCase().split('')
+
+    let result = charArray.every((letter, index) => {
+        return letter === charArray[charArray.length - index - 1];
+    })
+
+    return result
+}
+    ```
 
 3. Looping Through and Comparing Characters(Optimized)
 <hr>
