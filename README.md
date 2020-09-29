@@ -211,6 +211,11 @@ Let's unveil the "mysteries":
 
 2. Looping Through and Comparing Characters:
 
+        This could be a bit confusing than the previous implementation.
+        We will break it into simple steps.Stay in the game. 
+
+
+
     ```js
     function palindromeChecker(text) {
         let charArray = text.toLowerCase().split('')
