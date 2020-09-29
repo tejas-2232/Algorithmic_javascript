@@ -213,7 +213,11 @@ Let's unveil the "mysteries":
 
         This could be a bit confusing than the previous implementation.
         We will break it into simple steps.Stay in the game. 
+* For example, If we have to test string "machine", we will compare "m" with "e", because if the string is reversed then "e" will take m's position
 
+* Similarly, "a" will be compared to "n".
+
+* Let's Jump to code.
 
 
     ```js
