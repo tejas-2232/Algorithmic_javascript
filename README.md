@@ -251,22 +251,73 @@ Let's unveil the "mysteries":
 
 <b>6. Name </b>
 
-__The challenge:__ 
+__The challenge:__ <p> </p>
 
 
 __Algorithmic Thinking:__ <p> </p>
 
+
+__code Implementation:__ <p> </p>
 
 <hr>
 <hr>
 
 <b>7. Name </b>
 
-__The challenge:__ 
+__The challenge:__ <p> </p>
 
 
 __Algorithmic Thinking:__ <p> </p>
 
 
+__code Implementation:__ <p> </p>
+<hr>
+<hr>
+
+<b>8. Name </b>
+
+__The challenge:__ <p> </p>
+
+
+__Algorithmic Thinking:__ <p> </p>
+
+
+__code Implementation:__ <p> </p>
+<hr>
+<hr>
+
+<b>9. Name </b>
+
+__The challenge:__ <p> </p>
+
+
+__Algorithmic Thinking:__ <p> </p>
+
+
+__code Implementation:__ <p> </p>
+<hr>
+<hr>
+
+<b>10. Name </b>
+
+__The challenge:__ <p> </p>
+
+
+__Algorithmic Thinking:__ <p> </p>
+
+
+__code Implementation:__ <p> </p>
+<hr>
+<hr>
+
+<b>11. Name </b>
+
+__The challenge:__ <p> </p>
+
+
+__Algorithmic Thinking:__ <p> </p>
+
+
+__code Implementation:__ <p> </p>
 <hr>
 <hr>
