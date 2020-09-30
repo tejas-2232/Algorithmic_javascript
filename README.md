@@ -1,17 +1,15 @@
 # Algorithmic_javascript
+<br>
 
 > ## This is open-source Project and Part HACKTOBERFEST 2020 
 
-<br>
-
 #### <font color='green'> Contribute to open source and make the world *A Better Place* </font>
-<br>
 
 #### Feel free to give a pull request. It should not be spam or invalid. It will be accepted and will be merged if it's valid PR
 
 ##### PS:You will also WIN cool T-shirt from Digital Ocean If you do FOUR successful Pull Requests with.
 
-> Hurry Up and Start Coding! :)
+> # Hurry Up and Start Coding! :)
 
 
 <br>
