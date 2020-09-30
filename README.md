@@ -240,6 +240,9 @@ method tests whether all elements pass the test or not which is implemented by p
 
 * Here, provided function accepts two parameters: current letter and index. Read more about every function [here](https://www.geeksforgeeks.org/javascript-array-every-method/).
 
+* In <font color="red" >.every()</font> method, it will return true if test passes all cases and will return false if it didn't.
+
+> Did you notice any problem?There is problem with this implementation if we think performanace wise
 
 
 
