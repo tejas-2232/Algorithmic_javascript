@@ -4,7 +4,7 @@
 
 <br>
 
-### <font color='green'> **Contribute to open source and make the world *A Better Place*.  ** </font>
+### <font color='green'> Contribute to open source and make the world *A Better Place* </font>
 
 
 
