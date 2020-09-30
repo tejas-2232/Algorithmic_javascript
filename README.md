@@ -4,6 +4,10 @@
 
 <br>
 
+### <font color='green'> **Contribute to open source and make the world *A Better Place*.  ** </font>
+
+
+
 > ### [Sign In Here To start Hacking](https://hacktoberfest.digitalocean.com) <br>
 
 #### Sign-in on their website before contributing to repository
