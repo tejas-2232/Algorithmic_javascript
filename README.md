@@ -232,6 +232,65 @@ __Algorithmic Thinking:__ <p> From the challenge statement, we can infer that ou
 
 __Code Implementation:__
 
+We need to keep track of every character in the string as well as the number of times it exists.
+
+The main concept we need here is character mapping. Our aim is to map characters to the number of times they exist.
+
+for example: In string "success" <br>
+* s=3
+* u=1
+* c=2
+* e=1
+
+*To implement this, an objet can be used.We loop through string received & add each character to a character map object as a key & the number of times it exists as a value*
+
+```js
+  let charmap = {
+       s:3,
+       u:1,
+       c:2,
+       e:1
+  }
+```
+
+**Let's implement it**
+
+```js
+
+/* 
+maxCharValue is used to store the maximum value yet encountered at the point of every iteration with the for---in loop.
+
+maxChar is used to store the character with the highest value on every iteration.
+
+*/
+function maxRecurringChar(text) {
+    let charMap = {}
+    let maxCharValue = 0
+    let maxChar = ''
+
+    for (let char of text) {
+        if (charMap.hasOwnProperty(char)) {
+            charMap[char]++
+        } else {
+            charMap[char] = 1
+        }
+    }
+
+    for (let char in charMap) {
+        if (charMap[char] > maxCharValue) {
+            maxCharValue = charMap[char]
+            maxChar = char
+        }
+    }
+
+    return maxChar
+}
+
+console.log(maxRecurringChar('success'))
+//  will return 's' because it is occuring 3 times
+```
+
+
 <hr>
 <hr>
 
