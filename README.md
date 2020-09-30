@@ -1,6 +1,43 @@
 # Algorithmic_javascript
 
-### This is open-source Project
+### This is open-source Project and Part HACKTOBERFEST 
+
+#### Sign-in on their website before contributing to repository
+
+[Sign In To start Hacking](https://hacktoberfest.digitalocean.com) <br>
+
+#### Event Details
+
+ Hacktoberfest® is open to everyone in our global community. Whether you’re a developer, student learning to code, event host, or company of any size, you can help drive growth of open source and make positive contributions to an ever-growing community. All backgrounds and skill levels are encouraged to complete the challenge.
+* Hacktoberfest is a celebration open to everyone in our global community.
+
+* Pull requests can be made in any GitHub-hosted repositories/projects.
+
+* You can sign up anytime between October 1 and October 31.
+
+#### Rules
+
+* To earn your Hacktoberfest tee or tree reward, you must register and make four valid pull requests (PRs) between October 1-31 (in any time zone). 
+* PRs can be made to any public repo on GitHub, not only the ones with issues labeled Hacktoberfest. If a maintainer reports your pull request as spam or behavior not in line with the project’s code of conduct, you will be ineligible to participate.
+* This year, the first 70,000 participants who successfully complete the challenge will be eligible to receive a prize. 
+
+
+#### Quality Standards
+
+In line with Hacktoberfest values **(Quantity is fun, quality is key)** , here you are provided examples of pull requests that we consider to be low-quality contributions (which we discourage).
+
+* Pull requests that are automated (e.g. scripted opening pull requests to remove whitespace/fix typos/optimize images).
+
+* Pull requests that are disruptive (e.g. taking someone else's branch/commits and making a pull request).
+
+* Pull requests that are regarded by a project maintainer as a hindrance vs. helping.
+
+* Something that's clearly an attempt to simply +1 your pull request count for October.
+
+**Last but not least, one pull request to fix a typo is fine, but 5 pull requests to remove a stray whitespace is not.**
+
+> ## Refer to [HacktoberFest](https://hacktoberfest.digitalocean.com/details) Website for detailed information
+
 __If you want to contribute then follow theses steps__
 >1.fork the repo. <br>2.take the algorithm which you want to add to list<br> 3.Make sure it's not repeated. <br> 4. Be ready with your code in *JAVASCRIPT* <br> 5.The added algorithm should have following sub-sections <br>
     > 5.1 A short Introduction <br>
