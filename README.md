@@ -6,7 +6,9 @@ __If you want to contribute then follow theses steps__
     > 5.1 A short Introduction <br>
     > 5.2 The challenge<br>
     > 5.3 Algorithmic thinking<br>
-    > 5.4 Code Implementation <br>
+    > 5.4 Code Implementation <br> 
+    6. add two hr tags after each problem in README.md file <br>
+    
 
 
 __Algorithms practiced using JS__
