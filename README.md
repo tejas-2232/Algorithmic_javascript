@@ -3,10 +3,10 @@
 ### This is open-source Project
 __If you want to contribute then follow theses steps__
 >1.fork the repo. <br>2.take the algorithm which you want to add to list<br> 3.Make sure it's not repeated. <br> 4. Be ready with your code in *JAVASCRIPT* <br> 5.The added algorithm should have following sub-sections <br>
-    > 5.1 A short Introduction
-      5.2 The challenge
-      5.3 Algorithmic thinking
-      5.4 Code Implementation
+    > 5.1 A short Introduction <br>
+    > 5.2 The challenge<br>
+    > 5.3 Algorithmic thinking<br>
+    > 5.4 Code Implementation <br>
 
 
 __Algorithms practiced using JS__
@@ -87,10 +87,72 @@ We will now explore ways to solve this challenge below. They are:
 <hr>
 <b>2. Vowel counter </b>
 
-__The challenge:__ 
+<p>Here we will be working with strings and arrays. The main challenge is given in The challenge section below.Let's find it </p>
+
+__The challenge:__ <p>You are given a string of text containing zero or more vowels in it,count the number of vowels that can be found in given text. For example:</p>
+
+    ```js
+    vowelCounter("Hacktoberfest is very Nice") //will return 8
+    ```
 
 
-__Algorithmic Thinking:__ <p> </p>
+__Algorithmic Thinking:__ <p> After reading the problem statement, __ given text of string__ must be in your mind. Let's go further to explore</p>
+
+> A function is a block of organized, reusable code that is used to perform a single, related action. They may or may not accepts value as parameter for computational tasks. The values are also called as Arguments.
+
+*Let's Breakdown the approach* 
+
+* write a function which receives a parameter called "text". It should be string of any desired length which is to be passed in function as an argument.
+
+* create a counter to count vowels
+
+* Next, we need to scan the string and search for the vowels ('a','e','i','o','u')
+
+* Function will return the number of vowels found. So you have to use __*return*__ function which stops the the function execution and returns a value.
+<br>
+
+__Code Implementation:__ 
+<p> We are going to use Two approaches for solving this problem:</p>
+
+    1. Using Iterative approach
+    2. Using Regular Expression
+
+1.Using Iterative approach:  
+<br>
+```js
+const vowel = ["a", "e", "i", "o", "u"];
+
+function vowelcnt(text) {
+    let counter = 0;
+
+    //Loop through text to test if each character is a vowel
+    for (let letter of text.toLowerCase()) {
+        if (vowel.includes(letter)) {
+            counter++;
+        }
+    }
+
+    // Return number of vowels
+
+    return counter;
+}
+
+console.log(vowelcnt("i love HacktoberFest"))
+```
+
+**Breaking-down the steps:**
+
+* Firstly, we declard const vowel which is array of five vowels. 
+* We declare a function and initialize the counter.
+* We make use of For loop to itearte over the given string. Next, we convert the all letters of string to lowercase as we don't want to miss out on uppercase letters.
+* In for loop,use if to check if selected letter is included in the array of vowels which we declared earlier. We call *includes()* method on array of vowels to check whether the array includes selected letter or not.
+
+* If the condition is true, we increment the counter.
+* After looping through, counter is returned which gives the counte of vowels found in given string.
+
+
+
+
 
 
 <hr>
@@ -106,10 +168,13 @@ maxRecurringChar('aabacada') // will return 'a'
 ``` 
 
 __Algorithmic Thinking:__ <p> From the challenge statement, we can infer that our function has only one parameter; the string of text.<br> We need to somehow keep track of every character in the string as well as the number of times it exists. <br> This we would describe as character mapping. Once we successfully create such a map, we can easily determine which character has the highest occurence. </p>
+<br>
 
+__Code Implementation:__
 
 <hr>
 <hr>
+
 <b>4. Sentence Capitalization</b>
 <p> Often during presentation situation arises where we need to manipulate the letter casing of strings within our application. Javascript offers two popular methods designed for this purpose:
 
