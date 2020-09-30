@@ -232,6 +232,17 @@ Let's unveil the "mysteries":
     }
     ```
 
+Let's review it:
+* First we convert the string to lowercase and after it we use <font color="red" >.split()</font> method 
+
+* We use special array method <font color="red" >.every()</font>  to loop through array & perform our check. In fact,<font color="red" >.every()</font>
+method tests whether all elements pass the test or not which is implemented by provided function
+
+* Here, provided function accepts two parameters: current letter and index. Read more about every function [here](https://www.geeksforgeeks.org/javascript-array-every-method/).
+
+
+
+
 3. Looping Through and Comparing Characters(Optimized):
 
 
