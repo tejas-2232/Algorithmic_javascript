@@ -77,7 +77,7 @@ __Algorithms practiced using JS__
 3. Finding the Most Recurring Character
 4. Sentence Capitalization
 5. Palindromes
-
+6. Mean, Median, and Mode
 ## Explanation
 <b>1. String reversing</b>
  <p>The string reversal algorithm is perhaps the most common JavaScript code challenge on the internet. In this article, we explore various string reversal techniques as a good number of string manipulation algorithms are dependent on ones ability to reverse a string. </p> <br>
@@ -447,15 +447,35 @@ method tests whether all elements pass the test or not which is implemented by p
 <hr>
 <hr>
 
-<b>6. Name </b>
+<b>6. Mean, Median, and Mode </b>
 
-__The challenge:__ <p> </p>
-
-
-__Algorithmic Thinking:__ <p> </p>
+__The challenge:__ <p>Given an array of numbers, calculate the mean, median, and mode. </p>
 
 
-__code Implementation:__ <p> </p>
+__Algorithmic Thinking:__ <p>In terms of difficulty, the algorithm to find the mean of a collection of numbers is the easiest. Statistically, the mean is defined as the sum of the collection divided by its size. Therefore, we can simply use the array’s reduce method to calculate its sum and then divide that by its length. This algorithm has runtime complexities of linear time and constant space because every number needs to be added while no internal memory is necessary.
+
+The algorithm to find the median of a collection is of medium difficulty. First, we need to sort the array, but if its size is even, we will need extra logic to deal with two middle numbers. In these cases, we will need to return the average of those two numbers. This algorithm has a linearithmic time complexity due to sorting and a linear space complexity because internal memory is needed to hold the sorted array.
+
+The algorithm to find the mode is the most challenging. Since the mode is defined as the number or numbers that appear the most often, we will need to maintain a frequency table. To complicate things further, if every value appears the same number of times, there is no mode. In code, this means we will need to create a hash map that tallies the frequency of each unique number, and then loop through it to collect the maximum number or numbers, or none. Because every number needs to be counted to create the hash table which is held in memory, this algorithm has a linear time and space complexity. </p>
+
+
+__code Implementation:__ <p>const stat1 = new Stats([1, 2, 3, 4, 4, 5, 5]);
+const stat2 = new Stats([1, 1, 2, 2, 3, 3, 4, 4]);describe("Mean", () => {
+ it("Should implement mean", () => {
+  assert.equal(Stats.round(stat1.mean()), 3.43);
+  assert.equal(Stats.round(stat2.mean()), 2.5);
+ });
+});describe("Median", () => {
+ it("Should implement median", () => {
+  assert.equal(stat1.median(), 4);
+  assert.equal(stat2.median(), 2.5);
+ });
+});describe("Mode", () => {
+ it("Should implement mode", () => {
+  assert.deepEqual(stat1.mode(), [4, 5]);
+  assert.deepEqual(stat2.mode(), []);
+ });
+}); </p>
 
 <hr>
 <hr>
