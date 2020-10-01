@@ -447,16 +447,30 @@ method tests whether all elements pass the test or not which is implemented by p
 <hr>
 <hr>
 
-<b>6. Name </b>
+<b>6. Largest SubArray Sum </b>
 
-__The challenge:__ <p> </p>
-
-
-__Algorithmic Thinking:__ <p> </p>
+__The challenge:__ <p> Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers which has the largest sum. </p>
 
 
-__code Implementation:__ <p> </p>
+__Algorithmic Thinking:__ <p> Simple idea of the Kadane’s algorithm is to look for all positive contiguous segments of the array (max_ending_here is used for this). And keep track of maximum sum contiguous segment among all positive segments (max_so_far is used for this). Each time we get a positive sum compare it with max_so_far and update max_so_far if it is greater than max_so_far </p>
 
+
+__code Implementation:__ 
+
+    ```js
+    let largestSubarraySum = (inputArray) => {
+        let currentSum = 0
+        let largestSum = 0
+
+        for(let number of inputArray){
+            currentSum = Math.max(0, (currentSum + number))
+            largestSum = Math.max(largestSum, currentSum)
+        }
+        
+        return largestSum
+    
+    }
+    ```
 <hr>
 <hr>
 
