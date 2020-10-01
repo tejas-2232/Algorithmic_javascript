@@ -449,12 +449,12 @@ method tests whether all elements pass the test or not which is implemented by p
 
 <b>6. Factorial of a number </b>
 
-<p>The Factorial of a non-negative number ,n , is computed as the product of all integers between 1 and n (both inclusive).<br>
-   factorial(n) = n * (n-1) * ..... * 1<br>
+<p>The Factorial of a non-negative number ,n , is computed as the product of all integers between 1 and n (both inclusive).<br><br>
+   * factorial(n) = n * (n-1) * ..... * 1<br>
    It can be thought of as:<br>
-   factorial(n) = n * factorial(n-1).</p> <br>
+   * factorial(n) = n * factorial(n-1).</p> <br>
 
-__The challenge:__ <p>Given a number, print the factorial of this number </p>
+__The challenge:__ <p>Given a number, print the factorial of this number </p><br>
 
 ```js
     answer = factorial(n) // will return the factorial.
@@ -464,12 +464,12 @@ __Algorithmic Thinking:__ <p>Approaches <br>
 There are two ways to compute the factorial of a number in JavaScript.<br><br>
 
 1. Iterative<br>
-2. Recursive<br>
+2. Recursive<br><br>
 Both of these approaches will be explored below. </p>
 
 
-__code Implementation:__ <p>1. The Iterative approach<br><br>
-Keeping in mind the first definition of a ​factorial, the variable i is initially set equal to n and is gradually decremented to 1. In each step, the result of the multiplication is stored in the variable answer. </p>
+__code Implementation:__ <p><strong>1. The Iterative approach</strong><br><br>
+Keeping in mind the first definition of a ​factorial, the variable i is initially set equal to n and is gradually decremented to 1. In each step, the result of the multiplication is stored in the variable answer. </p><br>
 
 ```js
     function factorial(n){
@@ -487,9 +487,9 @@ Keeping in mind the first definition of a ​factorial, the variable i is initia
     answer = factorial(n)
     console.log("The factorial of " + n + " is " + answer);
 ```
-
-<p>2. The Recursive approach<br><br>
-As stated above, the factorial of n can be found by finding the factorial of a number one less than n, and then multiplying this answer with n. So the factorial of n-1 can be thought of as a subproblem that needs to be computed first. </p>
+<br>
+<p><strong>2. The Recursive approach</strong><br><br>
+As stated above, the factorial of n can be found by finding the factorial of a number one less than n, and then multiplying this answer with n. So the factorial of n-1 can be thought of as a subproblem that needs to be computed first. </p><br>
 
 ```js
     function factorial(n){
@@ -505,6 +505,7 @@ As stated above, the factorial of n can be found by finding the factorial of a n
     answer = factorial(n)
     console.log("The factorial of " + n + " is " + answer);
 ```
+<br>
 
 <hr>
 <hr>
