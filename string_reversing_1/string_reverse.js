@@ -49,3 +49,5 @@ function reversestring(text){
 
     return result
 }
+
+console.log(reversestring("machine") ) // print the result

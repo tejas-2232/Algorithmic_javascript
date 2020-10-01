@@ -32,4 +32,4 @@ function vowelcnt(text) {
     return counter;
 }
 
-console.log(vowelcnt("i love you"))
+console.log(vowelcnt("i love HacktoberFest"))
