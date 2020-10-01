@@ -60,7 +60,7 @@ In line with Hacktoberfest values **(Quantity is fun, quality is key)** , here y
 <br>
 
 __If you want to contribute then follow theses steps__
->1.fork the repo. <br>2.take the algorithm which you want to add to list<br> 3.Make sure it's not repeated. <br> 4. Be ready with your code in *JAVASCRIPT* <br> 5.The added algorithm should have following sub-sections <br>
+>1.fork the repo. <br>2.take the algorithm which you want to add to list<br> 3.Make sure it's not repeated. <br> 4. Be ready with your code in *JAVASCRIPT* <br>5.Add code file in folder and name the folder with problem name. e.g If you are adding Factorial code and it is sixth in  serial number then Folder Name becomes **Factorial_6** <br> 6.The added algorithm should have following sub-sections <br>
     > 5.1 A short Introduction <br>
     > 5.2 The challenge<br>
     > 5.3 Algorithmic thinking<br>
