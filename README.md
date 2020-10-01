@@ -67,7 +67,8 @@ __If you want to contribute then follow theses steps__
     > 5.4 Code Implementation <br> 
     6. add two hr tags after each problem in README.md file <br>
     
-
+### Star the repository If you enjoyed contributing to open source projects.
+<br>
 
 __Algorithms practiced using JS__
 
