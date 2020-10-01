@@ -562,15 +562,60 @@ Note that we chain both .replace() methods in succession such that both cases ar
 <hr>
 <hr>
 
-<b>7. Name </b>
+<b>7. Deep Comparison </b>
 
-__The challenge:__ <p> </p>
+Comparing arrays can be troublesome, not to mention multi-dimensional arrays. Here is something simple to help.
+
+__The challenge:__ <p> - JS Objects, contrary to the way we perceive it, are simply pointers to the data stored, rather than the actual data itself. Thus, to compare objects/arrays a and b we cannot just use normal comparison operators.</p> 
+```js 
+a === b //false
+```
+<p> - Use of multidimensional objects/arrays is possible, making it difficult to compare simply by iteration since we don't know the depth of a value. </p>
+
+<p> - Different data types like objects that also cannot be compared directly must also be taken into consideration. <p>
+ 
+ <p>Given the above, return a boolean signifying whether arrays a and b are equivalent in content. </p>
+
+__Algorithmic Thinking:__ <p>As we would be comparing each item contained in the objects, a loop may be the first instinct to solving it. However, with the potential of multidimensional iterables, we would have to disect nested arrays in the same way when we encounter them. A combination of iteration and recursion is therefore necessary. So for each item of the array a data type check is necessary as well, to allow execution of a relevant comparison.
+ 
+ Breaking it down:
+ * check if a === b
+ * check if a and b are both iterable
+ * iterate over a using keys and call deepCompare recursively
+</p>
 
 
-__Algorithmic Thinking:__ <p> </p>
+__code Implementation:__ <p> 
+Firstly, we'll do the most simple check of a === b to avoid unnecessary complexity. This will process all of the equal literal values for us.
 
+```js 
+if(a === b) return true
+```
 
-__code Implementation:__ <p> </p>
+Then comes the interesting part! There are several data types we need to look out for: Objects, Arrays(which JS treats as an object), and Dates(which is also treated as an object!), thus all we have to do is check if both a and is type object. If not, we can just return false as they didn't pass th a === b test.
+
+Next, we can process the dates first, as that doesn't require iteration. Make sure to compare ```Date.valueOf()``` instead.
+
+Lastly, by taking the keys of the iterables we can compare the length of a and b, then make use of built-in Array.some method to check if any values of the two iterables don't match.
+
+```js
+if(typeof a === "object" && typeof b === "object")
+  {
+    if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf()
+    else 
+    {
+      const keysA = Object.keys(a)
+      if(keysA.length !== Object.keys(b).length) return false
+      return !keysA.some( key => {
+        return !deepCompare(a[key], b[key])
+      })
+    }
+  }
+  else return false
+  ```
+  
+  It's that simple! Hope this helps.
+</p>
 <hr>
 <hr>
 
