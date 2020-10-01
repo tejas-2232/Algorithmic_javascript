@@ -447,15 +447,65 @@ method tests whether all elements pass the test or not which is implemented by p
 <hr>
 <hr>
 
-<b>6. Name </b>
+<b>6. Factorial of a number </b>
 
-__The challenge:__ <p> </p>
+<p>The Factorial of a non-negative number ,n , is computed as the product of all integers between 1 and n (both inclusive).<br><br>
+   * factorial(n) = n * (n-1) * ..... * 1<br>
+   It can be thought of as:<br>
+   * factorial(n) = n * factorial(n-1).</p> <br>
+
+__The challenge:__ <p>Given a number, print the factorial of this number </p>
+
+```js
+    answer = factorial(n) // will return the factorial.
+```
+
+__Algorithmic Thinking:__ <p>Approaches <br>
+There are two ways to compute the factorial of a number in JavaScript.<br><br>
+
+1. Iterative<br>
+2. Recursive<br><br>
+Both of these approaches will be explored below. </p>
 
 
-__Algorithmic Thinking:__ <p> </p>
+__code Implementation:__ <p><strong>1. The Iterative approach</strong><br><br>
+Keeping in mind the first definition of a ​factorial, the variable i is initially set equal to n and is gradually decremented to 1. In each step, the result of the multiplication is stored in the variable answer. </p><br>
 
+```js
+    function factorial(n){
+    let answer = 1;
+    if (n == 0 || n == 1){
+      return answer;
+    }else{
+       for(var i = n; i >= 1; i--){
+         answer = answer * i;
+       }
+       return answer;
+     }  
+    }
+    let n = 4;
+    answer = factorial(n)
+    console.log("The factorial of " + n + " is " + answer);
+```
+<br>
+<p><strong>2. The Recursive approach</strong><br><br>
+As stated above, the factorial of n can be found by finding the factorial of a number one less than n, and then multiplying this answer with n. So the factorial of n-1 can be thought of as a subproblem that needs to be computed first. </p><br>
 
-__code Implementation:__ <p> </p>
+```js
+    function factorial(n){
+    //base case
+    if(n == 0 || n == 1){
+        return 1;
+    //recursive case
+    }else{
+        return n * factorial(n-1);
+     }
+    }
+    let n = 4;
+    answer = factorial(n)
+    console.log("The factorial of " + n + " is " + answer);
+```
+<br>
 
 <hr>
 <hr>
