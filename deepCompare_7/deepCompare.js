@@ -1,26 +1,19 @@
 //deep comparison of multi-dimensional arrays with recursion
 
 const deepCompare = (a, b) => {
-  let res = true
+  if(a === b) return true
     
-  if(Array.isArray(a) && Array.isArray(b))
+  if(typeof a === "object" && typeof b === "object")
   {
-    let count = 0;
-
-    while(res && count < a.length)
+    if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf()
+    else 
     {
-      res = !a.some( (val, i) => {
-        return !deepCompare(val, b[i])
+      const keysA = Object.keys(a)
+      if(keysA.length !== Object.keys(b).length) return false
+      return !keysA.some( key => {
+        return !deepCompare(a[key], b[key])
       })
-
-      count++
     }
   }
-  else
-  {
-      res = (a === b)
-  }
-
-  return res
-
+  else return false
 }
