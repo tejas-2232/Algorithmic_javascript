@@ -1,7 +1,7 @@
 # Algorithmic_javascript
 <br>
 
-> ## This is open-source Project and Part HACKTOBERFEST 2020 
+> ## This is open-source Project and Part of HACKTOBERFEST 2020 
 
 #### <font color='green'> Contribute to open source and make the world *A Better Place* </font>
 
@@ -23,7 +23,7 @@
 
 #### Event Details
 
- Hacktoberfest® is open to everyone in our global community. Whether you’re a developer, student learning to code, event host, or company of any size, you can help drive growth of open source and make positive contributions to an ever-growing community. All backgrounds and skill levels are encouraged to complete the challenge.
+ Hacktoberfest® is open to everyone in our global community. Whether you’re a developer, student learning to code, event host, or company of any size, you can help drive growth of open source and make positive contributions to an ever-growing community. People from all backgrounds and having different skill levels are encouraged to complete the challenge.
 * Hacktoberfest is a celebration open to everyone in our global community.
 
 * Pull requests can be made in any GitHub-hosted repositories/projects.
@@ -60,12 +60,12 @@ In line with Hacktoberfest values **(Quantity is fun, quality is key)** , here y
 <br>
 
 __If you want to contribute then follow theses steps__
->1.fork the repo. <br>2.take the algorithm which you want to add to list<br> 3.Make sure it's not repeated. <br> 4. Be ready with your code in *JAVASCRIPT* <br>5.Add code file in folder and name the folder with problem name. e.g If you are adding Factorial code and it is sixth in  serial number then Folder Name becomes **Factorial_6** <br> 6.The added algorithm should have following sub-sections <br>
+>1.Fork the repo. <br>2.Take the algorithm which you want to add to list<br> 3.Make sure it's not repeated. <br> 4. Be ready with your code in *JAVASCRIPT* <br>5.Add code file in folder and name the folder with problem name. e.g If you are adding Factorial code and it is sixth in  serial number then Folder Name becomes **Factorial_6** <br> 6.The added algorithm should have following sub-sections <br>
     > 5.1 A short Introduction <br>
     > 5.2 The challenge<br>
     > 5.3 Algorithmic thinking<br>
     > 5.4 Code Implementation <br> 
-    6. add two hr tags after each problem in README.md file <br>
+    6. Add two hr tags after each problem in README.md file <br>
     
 
 
