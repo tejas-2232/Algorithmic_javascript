@@ -454,7 +454,7 @@ method tests whether all elements pass the test or not which is implemented by p
    It can be thought of as:<br>
    * factorial(n) = n * factorial(n-1).</p> <br>
 
-__The challenge:__ <p>Given a number, print the factorial of this number </p><br>
+__The challenge:__ <p>Given a number, print the factorial of this number </p>
 
 ```js
     answer = factorial(n) // will return the factorial.
