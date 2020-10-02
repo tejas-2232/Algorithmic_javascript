@@ -1,6 +1,5 @@
 # Algorithmic_javascript
 <br>
-[![Total Contributors](https://img.shields.io/badge/Contributors-totalcontributors-green)](#contributors)
 
 > ## This is open-source Project and Part HACKTOBERFEST 2020 
 
