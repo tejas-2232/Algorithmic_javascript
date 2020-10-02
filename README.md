@@ -595,12 +595,31 @@ if(a === b) return true
 
 Then comes the interesting part! There are several data types we need to look out for: Objects, Arrays(which JS treats as an object), and Dates(which is also treated as an object!), thus all we have to do is check if both a and is type object. If not, we can just return false as they didn't pass the ```a === b``` test.
 
-Next, we can process the dates first, as that doesn't require iteration. Make sure to compare ```Date.valueOf()``` instead.
+```if(typeof a === "object" && typeof b === "object")...```
+
+Next, we can process the dates first, as that doesn't require iteration. Make sure to compare ```Date.valueOf()``` instead of the date itself.
+
+```if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf()```
 
 Lastly, by taking the keys of the iterables we can compare the length of ```a``` and ```b```, then make use of built-in Array.some method to check if any values of the two iterables don't match.
 
+```const keysA = Object.keys(a)    //get keys/index of object/array
+   if(keysA.length !== Object.keys(b).length) return false    //make sure a and b are same length
+   
+   //Array.some stops executing nested code the moment there is one different value 
+   return !keysA.some( key => {   
+     return !deepCompare(a[key], b[key])    //run deepCompare recursively
+   })
+ ```
+
+
+Put it all together, and we have
+
 ```js
-if(typeof a === "object" && typeof b === "object")
+const deepCompare = (a, b) => {
+  if(a === b) return true
+
+  if(typeof a === "object" && typeof b === "object")
   {
     if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf()
     else 
@@ -613,9 +632,15 @@ if(typeof a === "object" && typeof b === "object")
     }
   }
   else return false
+}
+
+deepCompare(1, 2) //false
+const arr = [1, 2, "3", [{4: "5", 6: 7}, 8.0, new Date(), undefined]]
+deepCompare(arr, [1, 2, "3", [{4: "5", 6: 7}, 8.0, new Date(), undefined]]) //true
+
   ```
   
-  It's that simple! Hope this helps.
+It's that simple! Hope this helps.
 </p>
 <hr>
 <hr>
