@@ -351,7 +351,7 @@ __Code Implementation:__
 
 * After this process has being carried out for every word, capsArray now holds the capitalized version of every word in the sentence
 
-* Finally .join() method is used
+* Finally .join() method is used. Then We pass in an empty space as the separator. This gives us the capitalized sentence which we return in conclusion.
 </p>
 
 
