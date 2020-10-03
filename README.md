@@ -593,14 +593,45 @@ Firstly, we'll do the most simple check of ```a === b``` to avoid unnecessary co
 if(a === b) return true
 ```
 
-Then comes the interesting part! There are several data types we need to look out for: Objects, Arrays(which JS treats as an object), and Dates(which is also treated as an object!), thus all we have to do is check if both a and is type object. If not, we can just return false as they didn't pass the ```a === b``` test.
+Then comes the interesting part! There are several data types we need to look out for: Objects, Arrays(which JS treats as an object), and Dates(which is also treated as an object!), thus all we have to do is check if both a and b are of type object. If not, we can just return false as they didn't pass the ```a === b``` test.
 
-Next, we can process the dates first, as that doesn't require iteration. Make sure to compare ```Date.valueOf()``` instead.
+```js 
+if(typeof a === "object" && typeof b === "object")...
+```
+
+Note that we use ```===``` here to differentiate between data types strictly.
+
+Next, we can process the dates first, as that doesn't require iteration. Make sure to compare ```Date.valueOf()``` instead of the date object itself.
+
+```js 
+if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf() 
+```
 
 Lastly, by taking the keys of the iterables we can compare the length of ```a``` and ```b```, then make use of built-in Array.some method to check if any values of the two iterables don't match.
 
 ```js
-if(typeof a === "object" && typeof b === "object")
+//get keys/index of object/array a
+const keysA = Object.keys(a)
+
+//make sure a and b are the same length
+if(keysA.length !== Object.keys(b).length) return false
+   
+//Array.some() iterates through the values in an array and stops executing nested code until there is one that returns true
+//in this case that would be when there is one different value between a and b
+return !keysA.some( key => { 
+  //run deepCompare recursively
+  return !deepCompare(a[key], b[key])
+})
+ ```
+
+
+Put it all together, and we have
+
+```js
+const deepCompare = (a, b) => {
+  if(a === b) return true
+
+  if(typeof a === "object" && typeof b === "object")
   {
     if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf()
     else 
@@ -613,9 +644,24 @@ if(typeof a === "object" && typeof b === "object")
     }
   }
   else return false
+}
+
+deepCompare(1, 2) 
+//false
+
+deepCompare({"first": 1, "second": 2}, {"first": 1, "second": 2})
+//true
+
+deepCompare([1, "2", 3.0], [1, "2", 3])
+//false
+
+const arr = [1, 2, "3", [{4: "5", 6: 7}, 8.0, new Date(), undefined]]
+deepCompare(arr, [1, 2, "3", [{4: "5", 6: 7}, 8.0, new Date(), undefined]]) 
+//true
+
   ```
   
-  It's that simple! Hope this helps.
+It's that simple! Hope this helps.
 </p>
 <hr>
 <hr>
