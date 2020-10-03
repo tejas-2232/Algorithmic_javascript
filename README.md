@@ -321,6 +321,40 @@ __Code Implementation:__
 1. Using .forEach Method:
     The .forEach method in javascript runs a provided function on each element within array
 
+    ```js
+    function sentenceCap(text) {
+    let wordArray = text.toLowerCase().split(' ')
+
+    let capsarray = []
+
+    wordArray.forEach(word => {
+        capsarray.push(word[0].toUpperCase()+ word.slice(1) )    
+    });
+
+    return capsarray.join(' ')
+    
+    }
+    console.log(sentenceCap("ARTIFICIAL")) 
+    //will return Artificial
+    ```
+
+<p> 
+
+* We call the .toLowerCase() method on the string of text received to convert the entire sentence to lowercase. We also chain the .split() method in sequence to divide the lowercase sentence into an array of words as shown below. This array is stored as wordsArray
+</p>
+<p>
+
+* Next, using the .foreach() method, we iterate through every word(element) in the array and execute a function on it. 
+* The function takes the first letter of the word and turns it to uppercase using the .toUpperCase() method. To retrieve the remaining part of the word in lowercase, we use the .slice() method to slice the string starting from position 1 till the end.
+
+* We combine the transformed first letter and the sliced section together to form the capitalized word which we push into our array of capitalized words capsArray.
+
+* After this process has being carried out for every word, capsArray now holds the capitalized version of every word in the sentence
+
+* Finally .join() method is used
+</p>
+
+
 2. Using .map and .slice method:
     The .map method is used to create a new array with the results gotten from calling a provided function on every element in the array on which it is called.
 
