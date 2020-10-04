@@ -218,7 +218,7 @@ console.log(vowelcnt("i love HacktoberFest"))
 
 <hr>
 <hr>
-<b>3. Finding the Most Recurring Characterg</b>
+<b>3. Finding the Most Recurring Characters</b>
 
 <p> In this challenge, we will be dealing with strings, arrays and objects. We will learn to manipulate these data types using various methods that'd bring us to a working solution in the end.</p>
 
@@ -700,15 +700,22 @@ It's that simple! Hope this helps.
 <hr>
 <hr>
 
-<b>8. Name </b>
+<b>8. Anand Yadav</b>
 
-__The challenge:__ <p> </p>
-
-
-__Algorithmic Thinking:__ <p> </p>
+__The challenge:__ <p> Toggling the letters in a string to opposite letter case </p>
 
 
-__code Implementation:__ <p> </p>
+__Algorithmic Thinking:__ <p> check the case of each letter in the string, If it is lowercase convert to uppercase and vise-versa.</p>
+
+
+__code Implementation:__ <p> Iterate the letters as in array. Check if the letter is lower or upper```js 
+if(sentence[i]===sentence.toLowerCase())
+```
+convert the case to opposite case<br>
+```js
+sentence[i]=sentence[i].toUpperCase();
+```
+</p>
 <hr>
 <hr>
 
