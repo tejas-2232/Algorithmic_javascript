@@ -708,7 +708,8 @@ __The challenge:__ <p> Toggling the letters in a string to opposite letter case 
 __Algorithmic Thinking:__ <p> check the case of each letter in the string, If it is lowercase convert to uppercase and vise-versa.</p>
 
 
-__code Implementation:__ <p> Iterate the letters as in array. Check if the letter is lower or upper```js 
+__code Implementation:__ <p> Iterate the letters as in array. Check if the letter is lower or upper
+```js 
 if(sentence[i]===sentence.toLowerCase())
 ```
 convert the case to opposite case<br>
