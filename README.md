@@ -60,14 +60,15 @@ In line with Hacktoberfest values **(Quantity is fun, quality is key)** , here y
 <br>
 
 __If you want to contribute then follow theses steps__
->1.fork the repo. <br>2.take the algorithm which you want to add to list<br> 3.Make sure it's not repeated. <br> 4. Be ready with your code in *JAVASCRIPT* <br> 5.The added algorithm should have following sub-sections <br>
+>1.fork the repo. <br>2.take the algorithm which you want to add to list<br> 3.Make sure it's not repeated. <br> 4. Be ready with your code in *JAVASCRIPT* <br>5.Add code file in folder and name the folder with problem name. e.g If you are adding Factorial code and it is sixth in  serial number then Folder Name becomes **Factorial_6** <br> 6.The added algorithm should have following sub-sections <br>
     > 5.1 A short Introduction <br>
     > 5.2 The challenge<br>
     > 5.3 Algorithmic thinking<br>
     > 5.4 Code Implementation <br> 
     6. add two hr tags after each problem in README.md file <br>
     
-
+### Star the repository If you enjoyed contributing to open source projects.
+<br>
 
 __Algorithms practiced using JS__
 
@@ -320,6 +321,40 @@ __Code Implementation:__
 1. Using .forEach Method:
     The .forEach method in javascript runs a provided function on each element within array
 
+    ```js
+    function sentenceCap(text) {
+    let wordArray = text.toLowerCase().split(' ')
+
+    let capsarray = []
+
+    wordArray.forEach(word => {
+        capsarray.push(word[0].toUpperCase()+ word.slice(1) )    
+    });
+
+    return capsarray.join(' ')
+    
+    }
+    console.log(sentenceCap("ARTIFICIAL")) 
+    //will return Artificial
+    ```
+
+<p> 
+
+* We call the .toLowerCase() method on the string of text received to convert the entire sentence to lowercase. We also chain the .split() method in sequence to divide the lowercase sentence into an array of words as shown below. This array is stored as wordsArray
+</p>
+<p>
+
+* Next, using the .foreach() method, we iterate through every word(element) in the array and execute a function on it. 
+* The function takes the first letter of the word and turns it to uppercase using the .toUpperCase() method. To retrieve the remaining part of the word in lowercase, we use the .slice() method to slice the string starting from position 1 till the end.
+
+* We combine the transformed first letter and the sliced section together to form the capitalized word which we push into our array of capitalized words capsArray.
+
+* After this process has being carried out for every word, capsArray now holds the capitalized version of every word in the sentence
+
+* Finally .join() method is used. Then We pass in an empty space as the separator. This gives us the capitalized sentence which we return in conclusion.
+</p>
+
+
 2. Using .map and .slice method:
     The .map method is used to create a new array with the results gotten from calling a provided function on every element in the array on which it is called.
 
@@ -447,84 +482,221 @@ method tests whether all elements pass the test or not which is implemented by p
 <hr>
 <hr>
 
-<b>6. Narcissistic Number Checker</b>
+<b>6. Pig Latin Translator</b>
 
-__The challenge:__ 
-<p>
-*What is a Narcissistic Number:* A Narcissistic Number is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this challenge, we will be dealing with an integer and need to check it, is it Narcissistic Number or not.
-</p>
+For specific information on Pig Latin, view this [article](https://en.wikipedia.org/wiki/Pig_Latin).
+
+__The challenge:__ <p>Convert a string of text into Pig Latin.</p>
 
 
-__Algorithmic Thinking:__ 
-<p>
-According to challenge, we will get an integer argument and we need to check it, is it Narcissistic Number or not. This challenge will need one integer-typed parameter for the function<br>
+__Algorithmic Thinking:__
 
-Next we will strip one by one the digit and each of the digit need to be raised based on given base and be put in a array. Using loop we will be adding every element and check is it same with the given integer or not<br>
+We will consider two(2) ways to implement this function in JavaScript. They are:
 
-Finally, we return True or False depending on the result of evaluation.<br>
+An imperative approach
+A declarative approach
+Before going ahead to implement both solutions, it’d be helpful to gain a better understanding of the two terms used above.
 
-True: When it is a Narcissistic Number<br>
-False: Otherwise<br>
-</p>
+Imperative vs Declarative
+Very often, we find these terms thrown around like they are very simple concepts everyone should know. However, the difference is usually not much obvious to most.
+
+Simply put, an imperative style of programming is one which specifies how things get done. Although this might sound like what you do each time you write code, there's a difference to it. Imagine you were to add an array of numbers and return the sum, there are different ways you could approach the problem. One way could be writing a forloop that'd go over each element in the array and cumulatively add every element to an accumulator until the final sum is reached. That is imperative. You are specifying how things get done.
+
+On the other hand, a declarative approach would abstract this process, allowing you to specify what should be done rather than how. Thus, you may use the .reduce() method on the array to reduce every element to a final value by returning the sum within the call back.
+
+[Source](https://scotch.io/courses/the-ultimate-guide-to-javascript-algorithms/pig-latin)
 
 __code Implementation:__ 
-<p>
-In this challenge we have 2 common ways to solve it: <br>
 
-    1. Using loop and modulo
-    2. Using reduce function
+1. Imperative Approach
+
+We start by converting the received string str to lowercase. This is to prevent any casing related errors during comparison(“a” does not equal “A”).
+
+```js
+    // Convert string to lowercase
+    str = str.toLowerCase()
+```
+
+Next, we initialize two variables:
+
+```js
+    // Initialize array of vowels
+    const vowels = ["a", "e", "i", "o", "u"];
+    // Initialize vowel index to 0
+    let vowelIndex = 0;
+```
+
+vowels - containing the five English vowels
+vowelIndex - for storing the index at which the first vowel in the word is found. It is initialized to 0.
+
+We use an if…else statement to check if the first letter of the word can be found within our vowels array by calling the .includes() method on the array while passing it the first letter of the string str[0]. If it is found, this returns true, which implies that the first letter is a vowel. Hence, we simply add "``way``" to the end of the string and return the result as the Pig Latin equivalent.
+
+
+```js
+    if (vowels.includes(str[0])) {
+        // If first letter is a vowel
+        return str + "way";
+    } else {
+        ...
+    }
+```
+
+If the statement evaluates to false, it signifies that the starting character is a consonant. Hence, we use a for…of loop to iterate through the string to identify the position of the first vowel. When we locate the first vowel, we use the .indexOf() method to retrieve it’s position in the string and store it into the variable vowelIndex. After this step we terminate the loop using the break statement.
+
+```js
+    // If the first letter isn't a vowel i.e is a consonant
+        for (let char of str) {
+            // Loop through until the first vowel is found
+            if (vowels.includes(char)) {
+                // Store the index at which the first vowel exists
+                vowelIndex = str.indexOf(char);
+                break;
+            }
+        }
+```
+
+At the last line, we use the .slice() method to manipulate the string to generate the Pig Latin equivalent.
+
+```js
+    return str.slice(vowelIndex) + str.slice(0, vowelIndex) + "ay";
+```
+
+2. Declarative Approach
+
+In this approach, we implement a very concise solution to this challenge by combining the .replace() method and regular expressions to transform the received string into its Pig Latin equivalent.
+
+
+Our solution comprises mainly of two parts as analyzed below:
+
+```js
+ str.replace(/^([aeiouy])(._)/, '$1$2way')
+```
+
+The first .replace statement specifies a replacement to be carried out if the word begins with a vowel. This is specified in the first bracket within the_ *.replace()* method call i.e *([aeiou])*. The second bracket *(.*)* refers to every other character after the vowel. Thus, the expression specifies a pattern for words beginning with a vowel and followed by anything else. When this case is matched, a new string in the format of '``$1$2way``' is generated and used to replace the original srtring. $1 here refers to the first bracket and $2, the second bracket. This means that we simply take the word as it was and affix "``way``" to the end.
+
+```js
+ str.replace(/^(_[_^aeiouy]+)(._)/, '$2$1ay')
+```
+
+The second .replace statement specifies that if the word does not start with a vowel i.e ^([aeiouy]+), and is followed by anything else (``*.*)*, it should be replaced with a string formatted in the order '$2$1ay``'. The plus sign in ^([aeiouy]+) caters for a situation where there is a consonant cluster. Thus it represents every non-vowel character at the start of the word. '$2$1ay' generates the new string in the order of remaining characters + consonant cluster + '``ay``'. This gives the Pig Latin equivalent.
+
+```js
+function pigLatin_declarative(str) {
+    return str
+        .replace(/^([aeiouy])(._)/, '$1$2way')
+        .replace(/^(_[_^aeiouy]+)(._)/, '$2$1ay')
+}
+```
+
+Note that we chain both .replace() methods in succession such that both cases are tested and only the one that matches will be evaluated further.
+
+[Source](https://scotch.io/courses/the-ultimate-guide-to-javascript-algorithms/pig-latin)
+
+
+<hr>
+<hr>
+
+<b>7. Deep Comparison </b>
+
+Comparing objects can be troublesome, not to mention multi-dimensional objects/arrays. Here is something simple to help.
+
+__The challenge:__ <p> - JS Objects, contrary to the way we perceive it, are simply pointers to the data stored, rather than the actual data itself. Thus, to compare objects/arrays a and b we cannot just use normal comparison operators.</p> 
+```js 
+a === b //false
+```
+<p> - Use of multidimensional objects/arrays is possible, making it difficult to compare simply by iteration since we don't know the depth of a value. </p>
+
+<p> - Different data types like Dates and undefined must also be taken into consideration. <p>
+ 
+ <p>Given the above, return a boolean signifying whether a and b are equivalent in content. </p>
+
+__Algorithmic Thinking:__ <p>As we would be comparing each item contained in the objects, a loop may be the first instinct to solving it. However, with the potential of multidimensional iterables, we would have to disect nested arrays in the same way when we encounter them. A combination of iteration and recursion is therefore necessary. So for each item of the array a data type check is necessary as well, to allow execution of a relevant comparison.
+ 
+ Breaking it down:
+ * check if ```a === b```
+ * check if ```a``` and ```b``` are both iterable
+ * iterate over ```a``` using keys and call deepCompare recursively
 </p>
 
-1. Using loop and modulo
-```js
-function narcissisticChecker(value) {
-    let digits = []
-    let num = value
-    while (value > 9) {
-        digits.push(value % 10)
-        value = Math.floor(value / 10)
-    }
-    digits.push(value)
-    var result = 0;
-    for (number of digits) {
-        result += Math.pow(number, digits.length)
-    }
 
-    return result === num
-}
+__code Implementation:__ <p> 
+
+Firstly, we'll do the most simple check of ```a === b``` to avoid unnecessary complexity. This will process all of the equal literal values for us.
+
+```js 
+if(a === b) return true
 ```
 
-- The function will get an argument integer-typed
-- Creating 2 variable that is an array when we strip the number and for keeping the base number
-- Stripping the number using loop and modulo
-- Looping the array and raised each of the element and then sum all of it
+Then comes the interesting part! There are several data types we need to look out for: Objects, Arrays(which JS treats as an object), and Dates(which is also treated as an object!), thus all we have to do is check if both a and b are of type object. If not, we can just return false as they didn't pass the ```a === b``` test.
 
-2. Using reduce function
-```js
-function narcissisticchecker(value) {
-    return ('' + value).split('').reduce(function (total, num) {
-        return total + Math.pow(num, ('' + value).length)
-    }, 0) == value;
-}
+```js 
+if(typeof a === "object" && typeof b === "object")...
 ```
-- The function will get an argument integer typed
-- Casting the argument and split every digit
-- Using reduce function to reduce an array to one value only. In this context we reduce every element in the array to sum all of the element with each of the element raised to the power of the base
-- At last check is it same between value from the sum of all element in the array and base value
-- Here, provided reduce function that accept 2 argument [here](https://www.w3schools.com/jsref/jsref_reduce.asp).
 
-<hr>
-<hr>
+Note that we use ```===``` here to differentiate between data types strictly.
 
-<b>7. Name </b>
+Next, we can process the dates first, as that doesn't require iteration. Make sure to compare ```Date.valueOf()``` instead of the date object itself.
 
-__The challenge:__ <p> </p>
+```js 
+if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf() 
+```
+
+Lastly, by taking the keys of the iterables we can compare the length of ```a``` and ```b```, then make use of built-in Array.some method to check if any values of the two iterables don't match.
+
+```js
+//get keys/index of object/array a
+const keysA = Object.keys(a)
+
+//make sure a and b are the same length
+if(keysA.length !== Object.keys(b).length) return false
+   
+//Array.some() iterates through the values in an array and stops executing nested code until there is one that returns true
+//in this case that would be when there is one different value between a and b
+return !keysA.some( key => { 
+  //run deepCompare recursively
+  return !deepCompare(a[key], b[key])
+})
+ ```
 
 
-__Algorithmic Thinking:__ <p> </p>
+Put it all together, and we have
 
+```js
+const deepCompare = (a, b) => {
+  if(a === b) return true
 
-__code Implementation:__ <p> </p>
+  if(typeof a === "object" && typeof b === "object")
+  {
+    if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf()
+    else 
+    {
+      const keysA = Object.keys(a)
+      if(keysA.length !== Object.keys(b).length) return false
+      return !keysA.some( key => {
+        return !deepCompare(a[key], b[key])
+      })
+    }
+  }
+  else return false
+}
+
+deepCompare(1, 2) 
+//false
+
+deepCompare({"first": 1, "second": 2}, {"first": 1, "second": 2})
+//true
+
+deepCompare([1, "2", 3.0], [1, "2", 3])
+//false
+
+const arr = [1, 2, "3", [{4: "5", 6: 7}, 8.0, new Date(), undefined]]
+deepCompare(arr, [1, 2, "3", [{4: "5", 6: 7}, 8.0, new Date(), undefined]]) 
+//true
+
+  ```
+  
+It's that simple! Hope this helps.
+</p>
 <hr>
 <hr>
 
