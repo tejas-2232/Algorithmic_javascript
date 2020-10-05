@@ -1,7 +1,7 @@
 # Algorithmic_javascript
 <br>
 
-> ## This is open-source Project and Part HACKTOBERFEST 2020 
+> ## This is open-source Project and Part HACKTOBERFEST 2020
 
 #### <font color='green'> Contribute to open source and make the world *A Better Place* </font>
 
@@ -34,9 +34,9 @@
 
 #### Rules
 
-* To earn your Hacktoberfest tee or tree reward, you must register and make four valid pull requests (PRs) between October 1-31 (in any time zone). 
+* To earn your Hacktoberfest tee or tree reward, you must register and make four valid pull requests (PRs) between October 1-31 (in any time zone).
 * PRs can be made to any public repo on GitHub, not only the ones with issues labeled Hacktoberfest. If a maintainer reports your pull request as spam or behavior not in line with the project’s code of conduct, you will be ineligible to participate.
-* This year, the first 70,000 participants who successfully complete the challenge will be eligible to receive a prize. 
+* This year, the first 70,000 participants who successfully complete the challenge will be eligible to receive a prize.
 
 <br>
 
@@ -64,9 +64,9 @@ __If you want to contribute then follow theses steps__
     > 5.1 A short Introduction <br>
     > 5.2 The challenge<br>
     > 5.3 Algorithmic thinking<br>
-    > 5.4 Code Implementation <br> 
+    > 5.4 Code Implementation <br>
     6. add two hr tags after each problem in README.md file <br>
-    
+
 ### Star the repository If you enjoyed contributing to open source projects.
 <br>
 
@@ -74,10 +74,11 @@ __Algorithms practiced using JS__
 
 ## List of problems
 1. String reversing  
-2. Vowel counter 
+2. Vowel counter
 3. Finding the Most Recurring Character
 4. Sentence Capitalization
 5. Palindromes
+6. Anagrams
 
 ## Explanation
 <b>1. String reversing</b>
@@ -109,7 +110,7 @@ We will now explore ways to solve this challenge below. They are:
 
 *1.Chaining in-built methods:*
 
-        
+
     The **.split()** method is used to split a string into an array of characters. It receives one argument which specifies the separator that determines where every split occurs.
 
 
@@ -161,7 +162,7 @@ __Algorithmic Thinking:__ <p> After reading the problem statement, __ given text
 
 > A function is a block of organized, reusable code that is used to perform a single, related action. They may or may not accepts value as parameter for computational tasks. The values are also called as Arguments.
 
-*Let's Breakdown the approach* 
+*Let's Breakdown the approach*
 
 * write a function which receives a parameter called "text". It should be string of any desired length which is to be passed in function as an argument.
 
@@ -172,7 +173,7 @@ __Algorithmic Thinking:__ <p> After reading the problem statement, __ given text
 * Function will return the number of vowels found. So you have to use __*return*__ function which stops the the function execution and returns a value.
 <br>
 
-__Code Implementation:__ 
+__Code Implementation:__
 <p> We are going to use Two approaches for solving this problem:</p>
 
     1. Using Iterative approach
@@ -203,7 +204,7 @@ console.log(vowelcnt("i love HacktoberFest"))
 
 **Breaking-down the steps:**
 
-* Firstly, we declard const vowel which is array of five vowels. 
+* Firstly, we declard const vowel which is array of five vowels.
 * We declare a function and initialize the counter.
 * We make use of For loop to itearte over the given string. Next, we convert the all letters of string to lowercase as we don't want to miss out on uppercase letters.
 * In for loop,use if to check if selected letter is included in the array of vowels which we declared earlier. We call *includes()* method on array of vowels to check whether the array includes selected letter or not.
@@ -226,7 +227,7 @@ __The challenge:__ Given a string of text, find and return the most recurring ch
 
 ```js
 maxRecurringChar('aabacada') // will return 'a'
-``` 
+```
 
 __Algorithmic Thinking:__ <p> From the challenge statement, we can infer that our function has only one parameter; the string of text.<br> We need to somehow keep track of every character in the string as well as the number of times it exists. <br> This we would describe as character mapping. Once we successfully create such a map, we can easily determine which character has the highest occurence. </p>
 <br>
@@ -258,7 +259,7 @@ for example: In string "success" <br>
 
 ```js
 
-/* 
+/*
 maxCharValue is used to store the maximum value yet encountered at the point of every iteration with the for---in loop.
 
 maxChar is used to store the character with the highest value on every iteration.
@@ -299,8 +300,8 @@ console.log(maxRecurringChar('success'))
 <p> Often during presentation situation arises where we need to manipulate the letter casing of strings within our application. Javascript offers two popular methods designed for this purpose:
 
     1.toUpperCase(): this method returns the string passed in as an argument converted in uppercase letters. <br>
-    
-    2.toLowerCase(): this method returns the string passed in as an argument converted to lowercase letters. 
+
+    2.toLowerCase(): this method returns the string passed in as an argument converted to lowercase letters.
 
 __The challenge:__ Given a sentence containing two or more words, return the equivalent of the sentence when capitalized. E.g
 ```js
@@ -311,7 +312,7 @@ capitalSentence("a cat and a dog") // would return "A Cat And A Dog"
 __Algorithmic Thinking:__ <p>
 At a glance this may seem like a very simple challenge, but it actually isn’t when considered carefully.
 
-Working through the challenge, it seems that we need to write a function that'd receive the sentence to be converted as an argument 
+Working through the challenge, it seems that we need to write a function that'd receive the sentence to be converted as an argument
 Next,we go through every word in sentence and capitilize every first letter of word. This brings concept of LOOP to mind
  </p>
 
@@ -332,19 +333,19 @@ __Code Implementation:__
     });
 
     return capsarray.join(' ')
-    
+
     }
-    console.log(sentenceCap("ARTIFICIAL")) 
+    console.log(sentenceCap("ARTIFICIAL"))
     //will return Artificial
     ```
 
-<p> 
+<p>
 
 * We call the .toLowerCase() method on the string of text received to convert the entire sentence to lowercase. We also chain the .split() method in sequence to divide the lowercase sentence into an array of words as shown below. This array is stored as wordsArray
 </p>
 <p>
 
-* Next, using the .foreach() method, we iterate through every word(element) in the array and execute a function on it. 
+* Next, using the .foreach() method, we iterate through every word(element) in the array and execute a function on it.
 * The function takes the first letter of the word and turns it to uppercase using the .toUpperCase() method. To retrieve the remaining part of the word in lowercase, we use the .slice() method to slice the string starting from position 1 till the end.
 
 * We combine the transformed first letter and the sliced section together to form the capitalized word which we push into our array of capitalized words capsArray.
@@ -385,7 +386,7 @@ __Code Implementation:__
 
 
 <b>5. Palindromes </b>
-   
+
 *What is a Palindrome:* A palindrome is a word, number, or other sequence of characters which reads the same backward as forward, such as "madam" or "racecar". <br>
 
 __The challenge:__ <p>Given a string of text, return true or false indicating whether or not the text is a palindrome. e.g </p>
@@ -411,7 +412,7 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
 
 1. An Intuitive Approach:
     ```js
-    
+
     function palindromeCheck(text){
         var reverseText= text.toLowercase().split(' ').reverse().join(' ' )
 
@@ -421,7 +422,7 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
 Let's unveil the "mysteries":
 
 * Firstly, the function accepts the string that is to be tested
-* Next, all the letters are converted to lowercase,then <font color="red" >.split()</font> method is called on string that is received as text 
+* Next, all the letters are converted to lowercase,then <font color="red" >.split()</font> method is called on string that is received as text
 * Next, we call <font color="red" > .reverse()</font> to re-order the array elements in reverse.
 
 * After that <font color="red" >.join()</font> is called on reversed array to form a whole string.
@@ -431,7 +432,7 @@ Let's unveil the "mysteries":
 2. Looping Through and Comparing Characters:
 
         This could be a bit confusing than the previous implementation.
-        We will break it into simple steps.Stay in the game. 
+        We will break it into simple steps.Stay in the game.
 * For example, If we have to test string "machine", we will compare "m" with "e", because if the string is reversed then "e" will take m's position
 
 * Similarly, "a" will be compared to "n".
@@ -452,7 +453,7 @@ Let's unveil the "mysteries":
     ```
 
 Let's review it:
-* First we convert the string to lowercase and after it we use <font color="red" >.split()</font> method 
+* First we convert the string to lowercase and after it we use <font color="red" >.split()</font> method
 
 * We use special array method <font color="red" >.every()</font>  to loop through array & perform our check. In fact,<font color="red" >.every()</font>
 method tests whether all elements pass the test or not which is implemented by provided function
@@ -506,7 +507,7 @@ On the other hand, a declarative approach would abstract this process, allowing 
 
 [Source](https://scotch.io/courses/the-ultimate-guide-to-javascript-algorithms/pig-latin)
 
-__code Implementation:__ 
+__code Implementation:__
 
 1. Imperative Approach
 
@@ -600,18 +601,18 @@ Note that we chain both .replace() methods in succession such that both cases ar
 
 Comparing objects can be troublesome, not to mention multi-dimensional objects/arrays. Here is something simple to help.
 
-__The challenge:__ <p> - JS Objects, contrary to the way we perceive it, are simply pointers to the data stored, rather than the actual data itself. Thus, to compare objects/arrays a and b we cannot just use normal comparison operators.</p> 
-```js 
+__The challenge:__ <p> - JS Objects, contrary to the way we perceive it, are simply pointers to the data stored, rather than the actual data itself. Thus, to compare objects/arrays a and b we cannot just use normal comparison operators.</p>
+```js
 a === b //false
 ```
 <p> - Use of multidimensional objects/arrays is possible, making it difficult to compare simply by iteration since we don't know the depth of a value. </p>
 
 <p> - Different data types like Dates and undefined must also be taken into consideration. <p>
- 
+
  <p>Given the above, return a boolean signifying whether a and b are equivalent in content. </p>
 
 __Algorithmic Thinking:__ <p>As we would be comparing each item contained in the objects, a loop may be the first instinct to solving it. However, with the potential of multidimensional iterables, we would have to disect nested arrays in the same way when we encounter them. A combination of iteration and recursion is therefore necessary. So for each item of the array a data type check is necessary as well, to allow execution of a relevant comparison.
- 
+
  Breaking it down:
  * check if ```a === b```
  * check if ```a``` and ```b``` are both iterable
@@ -619,17 +620,17 @@ __Algorithmic Thinking:__ <p>As we would be comparing each item contained in the
 </p>
 
 
-__code Implementation:__ <p> 
+__code Implementation:__ <p>
 
 Firstly, we'll do the most simple check of ```a === b``` to avoid unnecessary complexity. This will process all of the equal literal values for us.
 
-```js 
+```js
 if(a === b) return true
 ```
 
 Then comes the interesting part! There are several data types we need to look out for: Objects, Arrays(which JS treats as an object), and Dates(which is also treated as an object!), thus all we have to do is check if both a and b are of type object. If not, we can just return false as they didn't pass the ```a === b``` test.
 
-```js 
+```js
 if(typeof a === "object" && typeof b === "object")...
 ```
 
@@ -637,8 +638,8 @@ Note that we use ```===``` here to differentiate between data types strictly.
 
 Next, we can process the dates first, as that doesn't require iteration. Make sure to compare ```Date.valueOf()``` instead of the date object itself.
 
-```js 
-if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf() 
+```js
+if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf()
 ```
 
 Lastly, by taking the keys of the iterables we can compare the length of ```a``` and ```b```, then make use of built-in Array.some method to check if any values of the two iterables don't match.
@@ -649,10 +650,10 @@ const keysA = Object.keys(a)
 
 //make sure a and b are the same length
 if(keysA.length !== Object.keys(b).length) return false
-   
+
 //Array.some() iterates through the values in an array and stops executing nested code until there is one that returns true
 //in this case that would be when there is one different value between a and b
-return !keysA.some( key => { 
+return !keysA.some( key => {
   //run deepCompare recursively
   return !deepCompare(a[key], b[key])
 })
@@ -668,7 +669,7 @@ const deepCompare = (a, b) => {
   if(typeof a === "object" && typeof b === "object")
   {
     if(a instanceof Date && b instanceof Date) return a.valueOf() === b.valueOf()
-    else 
+    else
     {
       const keysA = Object.keys(a)
       if(keysA.length !== Object.keys(b).length) return false
@@ -680,7 +681,7 @@ const deepCompare = (a, b) => {
   else return false
 }
 
-deepCompare(1, 2) 
+deepCompare(1, 2)
 //false
 
 deepCompare({"first": 1, "second": 2}, {"first": 1, "second": 2})
@@ -690,29 +691,52 @@ deepCompare([1, "2", 3.0], [1, "2", 3])
 //false
 
 const arr = [1, 2, "3", [{4: "5", 6: 7}, 8.0, new Date(), undefined]]
-deepCompare(arr, [1, 2, "3", [{4: "5", 6: 7}, 8.0, new Date(), undefined]]) 
+deepCompare(arr, [1, 2, "3", [{4: "5", 6: 7}, 8.0, new Date(), undefined]])
 //true
 
   ```
-  
+
 It's that simple! Hope this helps.
 </p>
 <hr>
 <hr>
 
+<b>8. Anagram</b>
+
+An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.
+
+__The challenge:__ <p>Given 2 strings of text, write an algorithm that return true or false indication wheter or not those string are anagrams. eg.</p>
+```js
+anagramChecker("Listen", "Silent");
+```
+
+__Algorithmic Thinking:__ <p>Our function must receive 2 parameters, as we need to compare 2 strings.</p>
+<p>Function should check if words are made of the same letters. Most straightforward approach seems to be something like in the most recurring character problem, but it will lead to long and complicated code.</p>
+<p>Much simpler code could be written using build in JS functions when we realize that characters order in words does not matter (as stated in anagram definition), so if we sort them in boths strings and compare - we will know if they are anagrams or not.</p>
+
+__code Implementation:__ <p>To use build in `sort` method on string we must change it into array, which can be done using `split` method with `''` as argument.</p>
+```js
+string.split('').sort()
+```
+<p>Then we must change this new array again into string, using `join`</p>
+```js
+string.split('').sort().join()
+```
+<p>We should also notice that strings should be compared case insensitive, so we need to 'normalize' their case</p>
+```js
+string.toLowerCase().split('').sort().join()
+```
+<p>When we do those thing for both strings - we can check if they are eqaual - which will tell us if they are anagrams:</p>
+```js
+function anagramChecker(a, b) {
+    return a.toLowerCase().split('').sort().join('') === b.toLowerCase().split('').sort().join('');
+}
+```
+<hr>
+<hr>
+
+
 <b>8. Name </b>
-
-__The challenge:__ <p> </p>
-
-
-__Algorithmic Thinking:__ <p> </p>
-
-
-__code Implementation:__ <p> </p>
-<hr>
-<hr>
-
-<b>9. Name </b>
 
 __The challenge:__ <p> </p>
 
