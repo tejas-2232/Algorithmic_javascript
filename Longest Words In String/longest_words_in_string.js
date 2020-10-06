@@ -17,6 +17,3 @@ function longestWords(sentence) {
     }
     return arrayOfMaxWords;
 }
-console.log(longestWords("You are just an old antidisestablishmentarian"))
-console.log(longestWords("I gave a present to my parents"))
-console.log(longestWords("Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo"))
