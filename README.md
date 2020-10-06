@@ -746,7 +746,7 @@ const encrypted = 65 + (char + key) % 65 % 26
 Additional functionality can be added by allowing the argument to be an array of keys:
 
 ```js
-const allShifts = [...Array(26).keys()]
+const allShifts = [...Array(25).keys()].map( n => n + 1 )
 const cipher = (str, keys=allShifts) => {
  ...
  const res = keys.map( key => {
@@ -759,6 +759,8 @@ Putting it all together:
 
 ```js
 const allShifts = [...Array(26).keys()]
+
+// return all possible shifts if keys not given
 const cipher = (str, keys=allShifts) => {
   const chars = str.split("")
   const res = keys.map( key => {
@@ -780,9 +782,29 @@ const cipher = (str, keys=allShifts) => {
   })
   return res.map( (r, i) => { return { key: keys[i], result: r.join("") } } )
 }
+
+cipher("JavaScript", [1, 2, 27])  
+/*[{ key: 1, result: 'KbwbTdsjqu' },
+   { key: 2, result: 'LcxcUetkrv' },
+   { key: 27, result: 'KbwbTdsjqu' }]*/
+   
+cipher("Something")
+/*[{ key: 1, result: 'Tpnfuijoh' },
+   { key: 2, result: 'Uqogvjkpi' },
+   { key: 3, result: 'Vrphwklqj' },
+   { key: 4, result: 'Wsqixlmrk' },
+   ......,
+   { key: 20, result: 'Migynbcha' },
+   { key: 21, result: 'Njhzocdib' },
+   { key: 22, result: 'Okiapdejc' },
+   { key: 23, result: 'Pljbqefkd' },
+   { key: 24, result: 'Qmkcrfgle' },
+   { key: 25, result: 'Rnldsghmf' }
+]
+*/
 ```
 
-And that's the easiest encryption ever! 
+And that's the easiest encryption ever! Happy Coding!
 </p>
 <hr>
 <hr>
