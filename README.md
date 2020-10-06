@@ -77,6 +77,7 @@ __Algorithms practiced using JS__
 3. Finding the Most Recurring Character
 4. Sentence Capitalization
 5. Palindromes
+6. Factorial of a number
 
 ## Explanation
 <b>1. String reversing</b>
