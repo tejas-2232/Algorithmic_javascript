@@ -700,15 +700,88 @@ It's that simple! Hope this helps.
 <hr>
 <hr>
 
-<b>8. Name </b>
+<b>8. Lexicographically equal or not </b>
+<p>Two strings are lexicographically equal if they are the same length and contain the same characters in the same positions.</p>
 
-__The challenge:__ <p> </p>
+__The challenge:__ <p>Given two strings of text, write an algorithm to check whether the strings are lexicographically equal or not. </p>
+
+<hr>
+
+```js
+ check_lexicographic("javascript","javascript")
+ // should return "true"
+```
+<hr>
+
+__Algorithmic Thinking:__ 
+<p> 
+The function will recieve two parameters, the two strings of text which we have to compare. 
+
+Now, compare the length of the strings and the positions of each character in the strings.
+
+Return whether they are lexicographically equal or not.
+</p>
 
 
-__Algorithmic Thinking:__ <p> </p>
+__code Implementation:__ 
+<p>
+Code implementation is much strait forward. You just need to compare both the strings on the basis of their length and the positions of characters in the strings.
+        1.Compare length
+        2.Compare positions
+
+*1.Compare length:*
+Check whether the given strings has same lenght or not by calling "check_length()" function.
+
+There is a built-in method "length". Using "str.length" you can find length of string "str".
+
+<hr>
+
+```js
+ var str = "Hello World!";
+ var n = str.length;
+ // should return "12"
+```
+<hr>
+
+*2.Compare positions:*
+Check whether the position of characters in the 2 given strings are same.
+
+Convert the 2 strings into array of their character, for doing this we can use "split()" method.
+The *.split()* method is used to split a string into an array of characters. It receives one argument which specifies the separator that determines where every split occurs.
+
+Using for loop we're gonna check every character of one string with the corresponding character of another string. 
+
+Have a look at the snippet below, you will get an idea.
+
+<hr>
+
+```js
+ for(let i=0;i<arr_str1.length;i++){
+            if (arr_str1[i]===arr_str2[i]){
+                count++;
+            }
+        }
+```
+
+<hr>
+
+Here, the "count" variable is initialised with "0" and it will increase by "1" whenever the characters are same.
+
+Now, the last step is to check whether "count" variable is equal to the lenght of the strings or not, they are equal only when, when each and every characters of the strings are equal to their corresponding ones.
+
+<hr>
+
+```js
+ if (count===arr_str1.length){
+            return true;
+        }
+        else{
+            return false;
+        }
+```
 
 
-__code Implementation:__ <p> </p>
+</p>
 <hr>
 <hr>
 
@@ -747,3 +820,4 @@ __Algorithmic Thinking:__ <p> </p>
 __code Implementation:__ <p> </p>
 <hr>
 <hr>
+
