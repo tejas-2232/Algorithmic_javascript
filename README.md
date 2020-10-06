@@ -712,15 +712,77 @@ __code Implementation:__ <p> </p>
 <hr>
 <hr>
 
-<b>9. Name </b>
+<b>9. Numbers to Roman Numerals </b>
 
-__The challenge:__ <p> </p>
-
-
-__Algorithmic Thinking:__ <p> </p>
+__The challenge:__ <p>Convert a regular number to a Roman Numeral</p>
 
 
-__code Implementation:__ <p> </p>
+__Algorithmic Thinking:__ <p>You want to convert a number to a roman numeral... the trick to this problem is to kind of "split" the problem to individual digits. Instead of doing some weird convoluted solution, you should see that each digit would map to a string value and they only "add up".
+
+**Example**
+- DXXXII = 532
+    - Now, let's think about this example step by step. Let's take 500 out of 532. What is 500 in roman numeral? `500 = D`, right? We "append" that to our "string". now we evaluate 32... so 32 is essentially 30 + 2, so we take out 30 this time. `30 = XXX`, then append to "string". And finally, we have 2... you can't really "destructure" 2 any further so we have `2 = II`, and then append to string...
+    - now we have `"D" + "XXX" + "II" = 532`, YAY!!!
+</p>
+
+
+__code Implementation:__ <p>
+
+```javascript
+// A regular number
+const num = 3;
+
+// convert a number from 0 - 3000 to a roman numeral  
+function convertToRomanNumeral(number) {
+    // 0, 1, 2, 3, 4, ..., 9
+    const ones = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'];
+    // 0, 10, 20, 30, 40, ..., 90
+    const tens = ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'];
+    // 0, 100, 200, 300, 400, ..., 900
+    const hundreds = ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM']
+    // 0, 1000, 2000, 3000
+    const thousands = ['', 'M', 'MM', 'MMM']
+
+    // get the value of digit in the thousandth postion (e.g. 3576 => 3) and accesses at index of the value of the digit (e.g. 3576 => thousands[3] = 'MMM')
+    const thousandthDigit = thousands[Math.floor(number / 1000)];
+
+    // get the value of digit in the hundredth postion (e.g. 3576 => 5) and accesses at index of the value of the digit (e.g. 3576 => hundreds[5] = 'D')
+    const hundredthDigit = hundreds[Math.floor((number % 1000) / 100)];
+
+    // get the value of digit in the tenth postion (e.g. 3576 => 7) and accesses at index of the value of the digit (e.g. 3576 => tens[7] = 'LXx')
+    const tenthDigit = tens[Math.floor((number % 100) / 10)];
+
+    // get the value of digit in the oneth postion (e.g. 3576 => 6) and accesses at index of the value of the digit (e.g. 3576 => ones[6] = 'VI')
+    const onethDigit = ones[Math.floor((number % 10) / 1)];
+
+    // combines the individual strings into one and returns...
+    return thousandthDigit + hundredthDigit + tenthDigit + onethDigit;
+}
+
+console.log(convertToRomanNumeral(40));
+
+/*
+    I = 1
+    V = 5
+    X = 10
+    L = 50
+    C = 100
+    D = 500
+    M = 1000
+
+    examples...
+    II = 2
+    III = 3
+    IV = 4
+    VI = 6
+    IX = 9
+
+    The algorithm or the plan
+*/
+```
+
+It's very simple ones you realize it.
+</p>
 <hr>
 <hr>
 
