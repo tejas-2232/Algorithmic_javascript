@@ -700,15 +700,121 @@ It's that simple! Hope this helps.
 <hr>
 <hr>
 
-<b>8. Name </b>
+<b> Longest Words In A String </b>
 
-__The challenge:__ <p> </p>
-
-
-__Algorithmic Thinking:__ <p> </p>
+__The challenge:__ <p>In this challenge, we will find out a solution of how to find longest word/words in a given string </p>
 
 
-__code Implementation:__ <p> </p>
+__Algorithmic Thinking:__ <p> Split the given string with space and save it in an array. Now the array has each word of the string. Iterating over each word we will calculate its length and determine whether this word length is greater with the previous one then push it in a new array and will return it at the end. </p>
+
+
+__code Implementation:__ <p> First we will make an empty array of arrayOfMaxWords
+```js 
+    let arrayOfMaxWords = []
+```
+then we will check whether string is empty or not
+```js 
+if(sentence){}
+```
+if string has some length then we will do a split of string with space and set a variable of maxLength to 0
+
+```js
+if(sentence){
+    let words = sentence.split(" ")
+    let maxLength = 0;
+}
+```
+then we will iterate over each word and make each word case insensitive by applying .toLowerCase()
+on each word
+```js
+if(sentence){
+    let words = sentence.split(" ")
+    let maxLength = 0;
+    words.forEach((_word) => {
+        let word = _word.toLowerCase();
+    });
+}
+```
+next we will compare the length of each word with maxLength variable. If word length is greater than maxLength variable then we will push it in an arrayOfMaxWords and store its length to maxLength variable.
+
+```js
+if(sentence){
+    let words = sentence.split(" ")
+    let maxLength = 0;
+    words.forEach((_word) => {
+        let word = _word.toLowerCase();
+         maxLength = word.length
+        arrayOfMaxWords.push(word)
+    });
+}
+```
+another use case is what if the current word length and maxLength is same then we will push it in to a same array. So here we go for it.
+```js
+if(sentence){
+    let words = sentence.split(" ")
+    let maxLength = 0;
+    words.forEach((_word) => {
+        let word = _word.toLowerCase();
+         if (word.length > maxLength) {
+                maxLength = word.length
+                arrayOfMaxWords.push(word)
+            }
+        else if (word.length === maxLength) {
+            arrayOfMaxWords.push(word)
+        }
+    });
+}
+```
+now what if the the same word arrive more than 1 time in a string  then we will check for it too. So we will update our second condition i.e
+
+```js 
+if(sentence){
+    let words = sentence.split(" ")
+    let maxLength = 0;
+    words.forEach((_word) => {
+        let word = _word.toLowerCase();
+        if (word.length > maxLength) {
+                maxLength = word.length
+                arrayOfMaxWords.push(word)
+            }
+        else if (word.length === maxLength && word !== arrayOfMaxWords[0]) {
+                arrayOfMaxWords.push(word)
+            }
+    });
+}
+```
+Now the last thing is that every time our word length is greater than maxLength then we have to clear the previous array. So the final code is :
+
+```js
+function longestWords(sentence) {
+    let arrayOfMaxWords = []
+    if (sentence) {
+        let words = sentence.split(" ")
+        let maxLength = 0;
+        words.forEach((_word) => {
+            let word = _word.toLowerCase();
+            if (word.length > maxLength) {
+                maxLength = word.length
+                arrayOfMaxWords = []
+                arrayOfMaxWords.push(word)
+            }
+            else if (word.length === maxLength && word !== arrayOfMaxWords[0]) {
+                arrayOfMaxWords.push(word)
+            }
+        });
+    }
+    return arrayOfMaxWords;
+}
+```
+
+By calling function with these cases we will get the below outpus:
+
+```js
+longestWords("You are just an old antidisestablishmentarian") // [ 'antidisestablishmentarian' ]
+longestWords("I gave a present to my parents")// [ 'present', 'parents' ]
+longestWords("Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo")// [ 'buffalo' ]
+```
+ </p>
 <hr>
 <hr>
 
