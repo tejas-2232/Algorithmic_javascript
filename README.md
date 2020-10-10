@@ -700,15 +700,72 @@ It's that simple! Hope this helps.
 <hr>
 <hr>
 
-<b>8. Name </b>
+<b>8. Narcissistic Number Checker</b>
 
-__The challenge:__ <p> </p>
+__The challenge:__ 
+<p>
+*What is a Narcissistic Number:* A Narcissistic Number is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this challenge, we will be dealing with an integer and need to check it, is it Narcissistic Number or not.
+</p>
 
 
-__Algorithmic Thinking:__ <p> </p>
+__Algorithmic Thinking:__ 
+<p>
+According to challenge, we will get an integer argument and we need to check it, is it Narcissistic Number or not. This challenge will need one integer-typed parameter for the function<br>
 
+Next we will strip one by one the digit and each of the digit need to be raised based on given base and be put in a array. Using loop we will be adding every element and check is it same with the given integer or not<br>
 
-__code Implementation:__ <p> </p>
+Finally, we return True or False depending on the result of evaluation.<br>
+
+True: When it is a Narcissistic Number<br>
+False: Otherwise<br>
+</p>
+
+__code Implementation:__ 
+<p>
+In this challenge we have 2 common ways to solve it: <br>
+
+    1. Using loop and modulo
+    2. Using reduce function
+</p>
+
+1. Using loop and modulo
+```js
+function narcissisticChecker(value) {
+    let digits = []
+    let num = value
+    while (value > 9) {
+        digits.push(value % 10)
+        value = Math.floor(value / 10)
+    }
+    digits.push(value)
+    var result = 0;
+    for (number of digits) {
+        result += Math.pow(number, digits.length)
+    }
+
+    return result === num
+}
+```
+
+- The function will get an argument integer-typed
+- Creating 2 variable that is an array when we strip the number and for keeping the base number
+- Stripping the number using loop and modulo
+- Looping the array and raised each of the element and then sum all of it
+
+2. Using reduce function
+```js
+function narcissisticchecker(value) {
+    return ('' + value).split('').reduce(function (total, num) {
+        return total + Math.pow(num, ('' + value).length)
+    }, 0) == value;
+}
+```
+- The function will get an argument integer typed
+- Casting the argument and split every digit
+- Using reduce function to reduce an array to one value only. In this context we reduce every element in the array to sum all of the element with each of the element raised to the power of the base
+- At last check is it same between value from the sum of all element in the array and base value
+- Here, provided reduce function that accept 2 argument [here](https://www.w3schools.com/jsref/jsref_reduce.asp).
+
 <hr>
 <hr>
 
