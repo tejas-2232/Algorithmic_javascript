@@ -1,3 +1,4 @@
+// Usign First Intuitive Method
 
 function palindrome_check(text) {
 
@@ -7,4 +8,4 @@ function palindrome_check(text) {
     
 }
 
-palindrome_check("car")
+console.log( palindrome_check("car"))
