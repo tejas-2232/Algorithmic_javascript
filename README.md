@@ -786,15 +786,44 @@ It's very simple ones you realize it.
 <hr>
 <hr>
 
-<b>10. Name </b>
+<b>10. Power Digit Sum </b>
 
-__The challenge:__ <p> </p>
-
-
-__Algorithmic Thinking:__ <p> </p>
+__The challenge:__ <p>Summing the digit from exponential results</p>
 
 
-__code Implementation:__ <p> </p>
+__Algorithmic Thinking:__ <p>Given a number along with the exponential number whose exponential number can be a positive or negative number. after getting the exponential result, sum the number of digits from the exponential result. 
+
+Breaking it down:
+ * given number M and its exponential number N, so M x M ... x M, N times.
+ * iterate over the the result of exponentiation and sum all of the digit.
+ * dont forget if the exponent number is negative, it may be contain point (.) that need to be ignored.
+
+**Example**
+- 2<sup>15</sup> = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26
+- 2<sup>-3</sup> = 0.125 and the sum of its digits is 0 + 1 + 2 + 5 = 8
+</p>
+
+
+__code Implementation:__ <p> 
+```javascript
+// #1.Using Iterative and type casting approach
+
+function powerDigitSum(num, pow){
+    let sum = 0
+    for (let digit of Math.pow(num, pow).toString()){
+      if (digit === '.'){  //checking for point (if exponential is negative)
+        continue;
+      }
+      sum += digit*1
+    }
+    return sum
+}
+
+console.log(powerDigitSum(2, 16)) // 65536 -> 6+5+5+3+6=25 
+console.log(powerDigitSum(2, -5)) // 0.03125 -> 0+0+3+1+2+5=11
+
+```
+</p>
 <hr>
 <hr>
 
