@@ -78,6 +78,9 @@ __Algorithms practiced using JS__
 3. Finding the Most Recurring Character
 4. Sentence Capitalization
 5. Palindromes
+6. Pig Latin 
+7. Deep Compare
+8. Binary Search Tree
 
 ## Explanation
 <b>1. String reversing</b>
@@ -700,15 +703,197 @@ It's that simple! Hope this helps.
 <hr>
 <hr>
 
-<b>8. Name </b>
+<b>8. Binary Search Tree </b>  
+Building, traversing or finding values in Binary Search Trees
 
-__The challenge:__ <p> </p>
+__The challenge:__ <p> 
+
+The challange is to build a Binary Search Tree, traverse across the tree or find a value in the BST using JavaScript Language.  
+Rather than dealing with complex problem statements on Binary Search Trees, this program focuses on providing a clean overview of how to Build a Binary Tree using the concepts of Object Oriented Programming in JavaScript Language.
+
+The functions that have been implemented in the program are as follows:
+
+```js
+// 1. For adding new value in the Binary Search Tree
+
+add(val) // val is the value passed as a parameter to be added in the BST
+
+// 2. For Inorder Traversal of the BST
+
+inorder_traversal() // User calls this function
+inorder(temp)  // helper function
+
+// 2. For Preorder Traversal of the BST
+
+preorder_traversal() // User calls this function
+preorder(temp)  // helper function
+
+// 2. For Postorder Traversal of the BST
+
+postorder_traversal() // User calls this function
+postorder(temp)  // helper function
+```
+</p>
 
 
-__Algorithmic Thinking:__ <p> </p>
+__Algorithmic Thinking:__ <p> 
+
+1. **_Building the tree:_**  
+A Binary Search Tree is a Tree Data Structure such that every node of the tree has less than or equal to 2 children (namely left and right), such that every single node holding values, smaller than a Node X, are to the left of Node X, whereas all nodes holding values greater than a Node X are to the right of Node X.  
+
+                                   Node X  
+                             (Storing val = 5)
+                                   /   \  
+                                  /     \  
+                       This branch       This branch  
+                         has nodes       has nodes  
+                            having       having  
+                           val < 5       val > 5
+
+On similar grounds, here is an example of a Binary Search Tree:
+
+                                     5
+                                   /   \
+                                  2     7
+                                 / \   / \
+                                1   3 6   9
+
+Hence this is what has to be taken care of while building a BST!  
+
+We can use a recursion algorithm to build a tree:
+
+    1. For every node: Check if to-be-added value is equal to the value that the node stores. If this is true, then we increase the count of that Node.  
+    
+    2. Else If to-be-added value is smaller than the node value then we go to the left subtree.  
+    
+    3. Else (to-be-added value is greater than node value) we go to the right subtree.
 
 
-__code Implementation:__ <p> </p>
+2. **_Inorder Traversal:_**  
+
+This traversal ensures that the left subtree is printed before the root node, and the right subtree is printed after the root node.
+
+3. _**Preorder Traversal:**_  
+
+This traversal ensures that the root node is printed before the left subtree and right subtree.
+
+4. _**Postorder Traversal:**_  
+
+This traversal ensures that the root node is printed in the end, that is, after left subtree and right subtree gets printed.
+
+5. **_Finding a value in the tree:_**  
+
+This problem can be conquered using a recursion logic:  
+
+    1. If value of the node is equal to to-be-founded value, then return the count of the node.  
+    
+    2. Else if to-be-founded value is smaller than value of the root node, then go to left subtree.  
+    
+    3. Else (to-be-founded value is greater than value of the root node), go to right subtree.  
+    
+    4. if root node is NULL, then to-be-founded value does not exist in the tree, hence return 0.
+
+</p>
+
+
+__Code Implementation:__ <p>
+
+For complete code check out the Binary Search Tree Folder, here I am showing snippets of code on which the algorithms are based.
+
+0. **_The Node Class_**
+
+```js
+class Node{
+    constructor(val){
+        this.val = val         // storing value
+        this.left = null       // address of the left child
+        this.right = null      // address of the right child
+        this.count = 1         // count of the occurence of this.val in the node
+    }
+}
+```
+
+1. **_Building the tree:_**  
+
+```js
+  if (val == temp.val){
+    temp.count += 1
+    return
+  }
+  else if (val < temp.val){
+    temp = temp.left
+  }
+  else{
+    temp = temp.right
+  }
+```
+
+2. **_Inorder Traversal:_**  
+
+```js
+ // printing the left subtree
+ this.inorder(temp.left)
+ 
+ // printing value of the node for all the counts
+ for (let index = 0; index < temp.count; index++) {
+ console.log(temp.val + " ")
+ }
+ 
+ // printing the right subtree
+ this.inorder(temp.right)
+ 
+ return
+```
+
+3. _**Preorder Traversal:**_  
+
+```js
+ // printing value of the node for all the counts
+ for (let index = 0; index < temp.count; index++) {
+ console.log(temp.val + " ")
+ }
+ 
+ // printing the left subtree
+ this.inorder(temp.left)
+ 
+ // printing the right subtree
+ this.inorder(temp.right)
+ 
+ return
+```
+
+4. **_Postorder Traversal:_**  
+
+```js
+ // printing the left subtree
+ this.inorder(temp.left)
+ 
+ // printing the right subtree
+ this.inorder(temp.right)
+ 
+ // printing value of the node for all the counts
+ for (let index = 0; index < temp.count; index++) {
+ console.log(temp.val + " ")
+ }
+ 
+ return
+```
+
+5. **_Finding a value in the tree:_**  
+
+```js
+if(val == temp.val){ // if val is equal to current node value
+  return temp.count
+}
+else if (val < temp.val){ // if val is less than current node value
+  return this.find_val(val, temp.left)
+}
+else{ // if val is greater than current node value
+  return this.find_val(val, temp.right)
+}
+```
+</p>
+
 <hr>
 <hr>
 
