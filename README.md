@@ -78,7 +78,10 @@ __Algorithms practiced using JS__
 3. Finding the Most Recurring Character
 4. Sentence Capitalization
 5. Palindromes
-6. Anagrams
+6. Pig Latin 
+7. Deep Compare
+8. Binary Search Tree
+9. Anagrams
 
 ## Explanation
 <b>1. String reversing</b>
@@ -701,37 +704,198 @@ It's that simple! Hope this helps.
 <hr>
 <hr>
 
-<b>8. Anagram</b>
 
-An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.
+<b>8. Binary Search Tree </b>  
+Building, traversing or finding values in Binary Search Trees
 
-__The challenge:__ <p>Given 2 strings of text, write an algorithm that return true or false indication wheter or not those string are anagrams. eg.</p>
-```js
-anagramChecker("Listen", "Silent");
-```
+__The challenge:__ <p> 
 
-__Algorithmic Thinking:__ <p>Our function must receive 2 parameters, as we need to compare 2 strings.</p>
-<p>Function should check if words are made of the same letters. Most straightforward approach seems to be something like in the most recurring character problem, but it will lead to long and complicated code.</p>
-<p>Much simpler code could be written using build in JS functions when we realize that characters order in words does not matter (as stated in anagram definition), so if we sort them in boths strings and compare - we will know if they are anagrams or not.</p>
+The challange is to build a Binary Search Tree, traverse across the tree or find a value in the BST using JavaScript Language.  
+Rather than dealing with complex problem statements on Binary Search Trees, this program focuses on providing a clean overview of how to Build a Binary Tree using the concepts of Object Oriented Programming in JavaScript Language.
 
-__code Implementation:__ <p>To use build in `sort` method on string we must change it into array, which can be done using `split` method with `''` as argument.</p>
+The functions that have been implemented in the program are as follows:
+
 ```js
-string.split('').sort()
+// 1. For adding new value in the Binary Search Tree
+
+add(val) // val is the value passed as a parameter to be added in the BST
+
+// 2. For Inorder Traversal of the BST
+
+inorder_traversal() // User calls this function
+inorder(temp)  // helper function
+
+// 2. For Preorder Traversal of the BST
+
+preorder_traversal() // User calls this function
+preorder(temp)  // helper function
+
+// 2. For Postorder Traversal of the BST
+
+postorder_traversal() // User calls this function
+postorder(temp)  // helper function
 ```
-<p>Then we must change this new array again into string, using `join`</p>
+</p>
+
+
+__Algorithmic Thinking:__ <p> 
+
+1. **_Building the tree:_**  
+A Binary Search Tree is a Tree Data Structure such that every node of the tree has less than or equal to 2 children (namely left and right), such that every single node holding values, smaller than a Node X, are to the left of Node X, whereas all nodes holding values greater than a Node X are to the right of Node X.  
+
+                                   Node X  
+                             (Storing val = 5)
+                                   /   \  
+                                  /     \  
+                       This branch       This branch  
+                         has nodes       has nodes  
+                            having       having  
+                           val < 5       val > 5
+
+On similar grounds, here is an example of a Binary Search Tree:
+
+                                     5
+                                   /   \
+                                  2     7
+                                 / \   / \
+                                1   3 6   9
+
+Hence this is what has to be taken care of while building a BST!  
+
+We can use a recursion algorithm to build a tree:
+
+    1. For every node: Check if to-be-added value is equal to the value that the node stores. If this is true, then we increase the count of that Node.  
+    
+    2. Else If to-be-added value is smaller than the node value then we go to the left subtree.  
+    
+    3. Else (to-be-added value is greater than node value) we go to the right subtree.
+
+
+2. **_Inorder Traversal:_**  
+
+This traversal ensures that the left subtree is printed before the root node, and the right subtree is printed after the root node.
+
+3. _**Preorder Traversal:**_  
+
+This traversal ensures that the root node is printed before the left subtree and right subtree.
+
+4. _**Postorder Traversal:**_  
+
+This traversal ensures that the root node is printed in the end, that is, after left subtree and right subtree gets printed.
+
+5. **_Finding a value in the tree:_**  
+
+This problem can be conquered using a recursion logic:  
+
+    1. If value of the node is equal to to-be-founded value, then return the count of the node.  
+    
+    2. Else if to-be-founded value is smaller than value of the root node, then go to left subtree.  
+    
+    3. Else (to-be-founded value is greater than value of the root node), go to right subtree.  
+    
+    4. if root node is NULL, then to-be-founded value does not exist in the tree, hence return 0.
+
+</p>
+
+
+__Code Implementation:__ <p>
+
+For complete code check out the Binary Search Tree Folder, here I am showing snippets of code on which the algorithms are based.
+
+0. **_The Node Class_**
+
 ```js
-string.split('').sort().join()
-```
-<p>We should also notice that strings should be compared case insensitive, so we need to 'normalize' their case</p>
-```js
-string.toLowerCase().split('').sort().join()
-```
-<p>When we do those thing for both strings - we can check if they are eqaual - which will tell us if they are anagrams:</p>
-```js
-function anagramChecker(a, b) {
-    return a.toLowerCase().split('').sort().join('') === b.toLowerCase().split('').sort().join('');
+class Node{
+    constructor(val){
+        this.val = val         // storing value
+        this.left = null       // address of the left child
+        this.right = null      // address of the right child
+        this.count = 1         // count of the occurence of this.val in the node
+    }
 }
 ```
+
+1. **_Building the tree:_**  
+
+```js
+  if (val == temp.val){
+    temp.count += 1
+    return
+  }
+  else if (val < temp.val){
+    temp = temp.left
+  }
+  else{
+    temp = temp.right
+  }
+```
+
+2. **_Inorder Traversal:_**  
+
+```js
+ // printing the left subtree
+ this.inorder(temp.left)
+ 
+ // printing value of the node for all the counts
+ for (let index = 0; index < temp.count; index++) {
+ console.log(temp.val + " ")
+ }
+ 
+ // printing the right subtree
+ this.inorder(temp.right)
+ 
+ return
+```
+
+3. _**Preorder Traversal:**_  
+
+```js
+ // printing value of the node for all the counts
+ for (let index = 0; index < temp.count; index++) {
+ console.log(temp.val + " ")
+ }
+ 
+ // printing the left subtree
+ this.inorder(temp.left)
+ 
+ // printing the right subtree
+ this.inorder(temp.right)
+ 
+ return
+```
+
+4. **_Postorder Traversal:_**  
+
+```js
+ // printing the left subtree
+ this.inorder(temp.left)
+ 
+ // printing the right subtree
+ this.inorder(temp.right)
+ 
+ // printing value of the node for all the counts
+ for (let index = 0; index < temp.count; index++) {
+ console.log(temp.val + " ")
+ }
+ 
+ return
+```
+
+5. **_Finding a value in the tree:_**  
+
+```js
+if(val == temp.val){ // if val is equal to current node value
+  return temp.count
+}
+else if (val < temp.val){ // if val is less than current node value
+  return this.find_val(val, temp.left)
+}
+else{ // if val is greater than current node value
+  return this.find_val(val, temp.right)
+}
+```
+</p>
+
 <hr>
 <hr>
 
@@ -809,7 +973,39 @@ It's very simple ones you realize it.
 <hr>
 <hr>
 
-<b>10. Name </b>
+<b>10. Anagram</b>
+
+An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.
+
+__The challenge:__ <p>Given 2 strings of text, write an algorithm that return true or false indication wheter or not those string are anagrams. eg.</p>
+```js
+anagramChecker("Listen", "Silent");
+```
+
+__Algorithmic Thinking:__ <p>Our function must receive 2 parameters, as we need to compare 2 strings.</p>
+<p>Function should check if words are made of the same letters. Most straightforward approach seems to be something like in the most recurring character problem, but it will lead to long and complicated code.</p>
+<p>Much simpler code could be written using build in JS functions when we realize that characters order in words does not matter (as stated in anagram definition), so if we sort them in boths strings and compare - we will know if they are anagrams or not.</p>
+
+__code Implementation:__ <p>To use build in `sort` method on string we must change it into array, which can be done using `split` method with `''` as argument.</p>
+```js
+string.split('').sort()
+```
+<p>Then we must change this new array again into string, using `join`</p>
+```js
+string.split('').sort().join()
+```
+<p>We should also notice that strings should be compared case insensitive, so we need to 'normalize' their case</p>
+```js
+string.toLowerCase().split('').sort().join()
+```
+<p>When we do those thing for both strings - we can check if they are eqaual - which will tell us if they are anagrams:</p>
+```js
+function anagramChecker(a, b) {
+    return a.toLowerCase().split('').sort().join('') === b.toLowerCase().split('').sort().join('');
+}
+```
+
+<b>11. Name </b>
 
 __The challenge:__ <p> </p>
 
@@ -821,7 +1017,7 @@ __code Implementation:__ <p> </p>
 <hr>
 <hr>
 
-<b>11. Name </b>
+<b>12. Name </b>
 
 __The challenge:__ <p> </p>
 
