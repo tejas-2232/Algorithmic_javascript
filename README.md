@@ -78,6 +78,9 @@ __Algorithms practiced using JS__
 3. Finding the Most Recurring Character
 4. Sentence Capitalization
 5. Palindromes
+6. Pig Latin 
+7. Deep Compare
+8. Binary Search Tree
 
 ## Explanation
 <b>1. String reversing</b>
@@ -700,7 +703,374 @@ It's that simple! Hope this helps.
 <hr>
 <hr>
 
-<b>8. Lexicographically equal or not </b>
+
+=======
+<b>8. Binary Search Tree </b>  
+Building, traversing or finding values in Binary Search Trees
+
+__The challenge:__ <p> 
+
+The challange is to build a Binary Search Tree, traverse across the tree or find a value in the BST using JavaScript Language.  
+Rather than dealing with complex problem statements on Binary Search Trees, this program focuses on providing a clean overview of how to Build a Binary Tree using the concepts of Object Oriented Programming in JavaScript Language.
+
+The functions that have been implemented in the program are as follows:
+
+```js
+// 1. For adding new value in the Binary Search Tree
+
+add(val) // val is the value passed as a parameter to be added in the BST
+
+// 2. For Inorder Traversal of the BST
+
+inorder_traversal() // User calls this function
+inorder(temp)  // helper function
+
+// 2. For Preorder Traversal of the BST
+
+preorder_traversal() // User calls this function
+preorder(temp)  // helper function
+
+// 2. For Postorder Traversal of the BST
+
+postorder_traversal() // User calls this function
+postorder(temp)  // helper function
+```
+</p>
+
+
+__Algorithmic Thinking:__ <p> 
+
+1. **_Building the tree:_**  
+A Binary Search Tree is a Tree Data Structure such that every node of the tree has less than or equal to 2 children (namely left and right), such that every single node holding values, smaller than a Node X, are to the left of Node X, whereas all nodes holding values greater than a Node X are to the right of Node X.  
+
+                                   Node X  
+                             (Storing val = 5)
+                                   /   \  
+                                  /     \  
+                       This branch       This branch  
+                         has nodes       has nodes  
+                            having       having  
+                           val < 5       val > 5
+
+On similar grounds, here is an example of a Binary Search Tree:
+
+                                     5
+                                   /   \
+                                  2     7
+                                 / \   / \
+                                1   3 6   9
+
+Hence this is what has to be taken care of while building a BST!  
+
+We can use a recursion algorithm to build a tree:
+
+    1. For every node: Check if to-be-added value is equal to the value that the node stores. If this is true, then we increase the count of that Node.  
+    
+    2. Else If to-be-added value is smaller than the node value then we go to the left subtree.  
+    
+    3. Else (to-be-added value is greater than node value) we go to the right subtree.
+
+
+2. **_Inorder Traversal:_**  
+
+This traversal ensures that the left subtree is printed before the root node, and the right subtree is printed after the root node.
+
+3. _**Preorder Traversal:**_  
+
+This traversal ensures that the root node is printed before the left subtree and right subtree.
+
+4. _**Postorder Traversal:**_  
+
+This traversal ensures that the root node is printed in the end, that is, after left subtree and right subtree gets printed.
+
+5. **_Finding a value in the tree:_**  
+
+This problem can be conquered using a recursion logic:  
+
+    1. If value of the node is equal to to-be-founded value, then return the count of the node.  
+    
+    2. Else if to-be-founded value is smaller than value of the root node, then go to left subtree.  
+    
+    3. Else (to-be-founded value is greater than value of the root node), go to right subtree.  
+    
+    4. if root node is NULL, then to-be-founded value does not exist in the tree, hence return 0.
+
+</p>
+
+
+__Code Implementation:__ <p>
+
+For complete code check out the Binary Search Tree Folder, here I am showing snippets of code on which the algorithms are based.
+
+0. **_The Node Class_**
+
+```js
+class Node{
+    constructor(val){
+        this.val = val         // storing value
+        this.left = null       // address of the left child
+        this.right = null      // address of the right child
+        this.count = 1         // count of the occurence of this.val in the node
+    }
+}
+```
+
+1. **_Building the tree:_**  
+
+```js
+  if (val == temp.val){
+    temp.count += 1
+    return
+  }
+  else if (val < temp.val){
+    temp = temp.left
+  }
+  else{
+    temp = temp.right
+  }
+```
+
+2. **_Inorder Traversal:_**  
+
+```js
+ // printing the left subtree
+ this.inorder(temp.left)
+ 
+ // printing value of the node for all the counts
+ for (let index = 0; index < temp.count; index++) {
+ console.log(temp.val + " ")
+ }
+ 
+ // printing the right subtree
+ this.inorder(temp.right)
+ 
+ return
+```
+
+3. _**Preorder Traversal:**_  
+
+```js
+ // printing value of the node for all the counts
+ for (let index = 0; index < temp.count; index++) {
+ console.log(temp.val + " ")
+ }
+ 
+ // printing the left subtree
+ this.inorder(temp.left)
+ 
+ // printing the right subtree
+ this.inorder(temp.right)
+ 
+ return
+```
+
+4. **_Postorder Traversal:_**  
+
+```js
+ // printing the left subtree
+ this.inorder(temp.left)
+ 
+ // printing the right subtree
+ this.inorder(temp.right)
+ 
+ // printing value of the node for all the counts
+ for (let index = 0; index < temp.count; index++) {
+ console.log(temp.val + " ")
+ }
+ 
+ return
+```
+
+5. **_Finding a value in the tree:_**  
+
+```js
+if(val == temp.val){ // if val is equal to current node value
+  return temp.count
+}
+else if (val < temp.val){ // if val is less than current node value
+  return this.find_val(val, temp.left)
+}
+else{ // if val is greater than current node value
+  return this.find_val(val, temp.right)
+}
+```
+</p>
+
+<hr>
+<hr>
+
+<b>9. Numbers to Roman Numerals </b>
+
+__The challenge:__ <p>Convert a regular number to a Roman Numeral</p>
+
+
+__Algorithmic Thinking:__ <p>You want to convert a number to a roman numeral... the trick to this problem is to kind of "split" the problem to individual digits. Instead of doing some weird convoluted solution, you should see that each digit would map to a string value and they only "add up".
+
+**Example**
+- DXXXII = 532
+    - Now, let's think about this example step by step. Let's take 500 out of 532. What is 500 in roman numeral? `500 = D`, right? We "append" that to our "string". now we evaluate 32... so 32 is essentially 30 + 2, so we take out 30 this time. `30 = XXX`, then append to "string". And finally, we have 2... you can't really "destructure" 2 any further so we have `2 = II`, and then append to string...
+    - now we have `"D" + "XXX" + "II" = 532`, YAY!!!
+</p>
+
+
+__code Implementation:__ <p>
+
+```javascript
+// A regular number
+const num = 3;
+
+// convert a number from 0 - 3000 to a roman numeral  
+function convertToRomanNumeral(number) {
+    // 0, 1, 2, 3, 4, ..., 9
+    const ones = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'];
+    // 0, 10, 20, 30, 40, ..., 90
+    const tens = ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'];
+    // 0, 100, 200, 300, 400, ..., 900
+    const hundreds = ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM']
+    // 0, 1000, 2000, 3000
+    const thousands = ['', 'M', 'MM', 'MMM']
+
+    // get the value of digit in the thousandth postion (e.g. 3576 => 3) and accesses at index of the value of the digit (e.g. 3576 => thousands[3] = 'MMM')
+    const thousandthDigit = thousands[Math.floor(number / 1000)];
+
+    // get the value of digit in the hundredth postion (e.g. 3576 => 5) and accesses at index of the value of the digit (e.g. 3576 => hundreds[5] = 'D')
+    const hundredthDigit = hundreds[Math.floor((number % 1000) / 100)];
+
+    // get the value of digit in the tenth postion (e.g. 3576 => 7) and accesses at index of the value of the digit (e.g. 3576 => tens[7] = 'LXx')
+    const tenthDigit = tens[Math.floor((number % 100) / 10)];
+
+    // get the value of digit in the oneth postion (e.g. 3576 => 6) and accesses at index of the value of the digit (e.g. 3576 => ones[6] = 'VI')
+    const onethDigit = ones[Math.floor((number % 10) / 1)];
+
+    // combines the individual strings into one and returns...
+    return thousandthDigit + hundredthDigit + tenthDigit + onethDigit;
+}
+
+console.log(convertToRomanNumeral(40));
+
+/*
+    I = 1
+    V = 5
+    X = 10
+    L = 50
+    C = 100
+    D = 500
+    M = 1000
+
+    examples...
+    II = 2
+    III = 3
+    IV = 4
+    VI = 6
+    IX = 9
+
+    The algorithm or the plan
+*/
+```
+
+It's very simple ones you realize it.
+</p>
+<hr>
+<hr>
+
+<b>10. Caesar Cipher </b>
+
+__The challenge:__ <p> Given a string and a shift key, encrypt the string through Caesar Cipher.</p>
+
+__Algorithmic Thinking:__ <p> This is a very simple algorithm that requires only a tiny bit of prerequisite knowledge regarding ASCII, and also some discretion when processing possible over 26 keys. Basically we just need to know that all chracters are stored as numbers in computer memory according to the ASCII standard: https://www.w3schools.com/charsets/ref_html_ascii.asp. And that the modulus function is our friend :)</p>
+
+
+__code Implementation:__ <p>
+ 
+So first of all we need to split the string into characters to be processed individually and convert it to ASCII codes. Then we must check whether the character is either uppercase or lowercase(everything else should be kept the same) then add the key to it accordingly. But it is not a simple matter of simply doing ```char + key``` because for example, by shifting X by 3 we should get A. However, X(88) + 3 equals to 91 which is "\[". Thus what we should be doing is:
+ 
+```js
+// js has built in String.charCodeAt() method to help us get the ASCII code 
+// https://www.w3schools.com/jsref/jsref_charcodeat.asp
+// the reverse is String.fromCharCode()
+const char = charCodeAt("X")
+const key = 3
+
+const encryptedWrongly = char + key
+
+// uppercase letters start at code 65, ends at 90
+const encryptedCorrectly = 65 + (char + key) % 65
+ 
+```
+
+Also taking into account the possibility of >26 keys:
+
+```js
+const encrypted = 65 + (char + key) % 65 % 26
+```
+
+Additional functionality can be added by allowing the argument to be an array of keys:
+
+```js
+const allShifts = [...Array(25).keys()].map( n => n + 1 )
+const cipher = (str, keys=allShifts) => {
+ ...
+ const res = keys.map( key => {
+   ...
+ })
+}
+```
+
+Putting it all together:
+
+```js
+const allShifts = [...Array(26).keys()]
+
+// return all possible shifts if keys not given
+const cipher = (str, keys=allShifts) => {
+  const chars = str.split("")
+  const res = keys.map( key => {
+    return chars.map( c => {
+      const char = c.charCodeAt(0)
+      if(char > 64 && char < 91)
+      {
+        return String.fromCharCode(65 + (char + key) % 65 % 26)
+      }
+      else if(char > 96 && char < 123)
+      {
+        return String.fromCharCode(97 + (char + key) % 97 % 26)
+      }
+      else
+      {
+        return String.fromCharCode(char)
+      }
+    })
+  })
+  return res.map( (r, i) => { return { key: keys[i], result: r.join("") } } )
+}
+
+cipher("JavaScript", [1, 2, 27])  
+/*[{ key: 1, result: 'KbwbTdsjqu' },
+   { key: 2, result: 'LcxcUetkrv' },
+   { key: 27, result: 'KbwbTdsjqu' }]*/
+   
+cipher("Something")
+/*[{ key: 1, result: 'Tpnfuijoh' },
+   { key: 2, result: 'Uqogvjkpi' },
+   { key: 3, result: 'Vrphwklqj' },
+   { key: 4, result: 'Wsqixlmrk' },
+   ......,
+   { key: 20, result: 'Migynbcha' },
+   { key: 21, result: 'Njhzocdib' },
+   { key: 22, result: 'Okiapdejc' },
+   { key: 23, result: 'Pljbqefkd' },
+   { key: 24, result: 'Qmkcrfgle' },
+   { key: 25, result: 'Rnldsghmf' }
+]
+*/
+```
+
+And that's the easiest encryption ever! Happy Coding!
+</p>
+<hr>
+<hr>
+
+<b>11. Lexicographically equal or not </b>
 <p>Two strings are lexicographically equal if they are the same length and contain the same characters in the same positions.</p>
 
 __The challenge:__ <p>Given two strings of text, write an algorithm to check whether the strings are lexicographically equal or not. </p>
@@ -780,32 +1150,7 @@ Now, the last step is to check whether "count" variable is equal to the lenght o
         }
 ```
 
-
 </p>
-<hr>
-<hr>
-
-<b>9. Name </b>
-
-__The challenge:__ <p> </p>
-
-
-__Algorithmic Thinking:__ <p> </p>
-
-
-__code Implementation:__ <p> </p>
-<hr>
-<hr>
-
-<b>10. Name </b>
-
-__The challenge:__ <p> </p>
-
-
-__Algorithmic Thinking:__ <p> </p>
-
-
-__code Implementation:__ <p> </p>
 <hr>
 <hr>
 
