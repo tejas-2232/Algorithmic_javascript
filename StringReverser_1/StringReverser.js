@@ -24,3 +24,5 @@ function reverser(){
    }
    return mainArray;
 }
+
+// to run : reverser("name","anotherName") will return => ["eman","emaNrehtona"]
