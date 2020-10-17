@@ -8,17 +8,24 @@ exponential result.
 
 // #1.Using Iterative and type casting approach
 
+// Step 1: given number M and its exponential number N, so M x M ... x M, N times.
 function powerDigitSum(num, pow){
-    let sum = 0
+  let sum = 0
 
-    // Step 1: Iterate over
-    for (let digit of Math.pow(num, pow).toString()){ 
-      if (digit === '.'){  //checking for point (if exponential is negative)
-        continue;
-      }
-      sum += digit*1
+  // Step 2: iterate over the the result of exponentiation digit result.
+  for (let digit of Math.pow(num, pow).toString()){
+
+  // Step 3: if the result contain fraction, ignore/skip the point (.) using "continue" keyword.
+    if (digit === '.'){  //checking for point (if exponential is negative)
+      continue;
     }
-    return sum
+
+  // Step 4: accumulate (sum) in "sum" variabel
+    sum += digit*1 // times 1 is for converting string to number
+  }
+
+  // Step 5: return the result
+  return sum
 }
 
 console.log(powerDigitSum(2, 16))
