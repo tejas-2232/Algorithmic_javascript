@@ -989,6 +989,7 @@ So first of all we need to split the string into characters to be processed indi
 // the reverse is String.fromCharCode()
 const char = charCodeAt("X")
 const key = 3
+```
 
 __code Implementation:__ <p> </p>
 <hr>
