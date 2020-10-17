@@ -990,8 +990,8 @@ So first of all we need to split the string into characters to be processed indi
 const char = charCodeAt("X")
 const key = 3
 ```
-
-__code Implementation:__ <p> </p>
+ </p>
+ 
 <hr>
 <hr>
 
@@ -1010,9 +1010,7 @@ __code Implementation:__ <p> </p>
 <b>12. Power Digit Sum </b>
  
 __The challenge:__ <p>Summing the digit from exponential results</p>
- 
-__Algorithmic Thinking:__ <p> This is a very simple algorithm that requires only a tiny bit of prerequisite knowledge regarding ASCII, and also some discretion when processing possible over 26 keys. Basically we just need to know that all chracters are stored as numbers in computer memory according to the ASCII standard: https://www.w3schools.com/charsets/ref_html_ascii.asp. And that the modulus function is our friend :)</p>
- 
+
 __Algorithmic Thinking:__ <p>Given a number along with the exponential number whose exponential number can be a positive or negative number. after getting the exponential result, sum the number of digits from the exponential result. 
  
 Breaking it down:
