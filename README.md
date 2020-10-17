@@ -979,8 +979,6 @@ __The challenge:__ <p> Given a string and a shift key, encrypt the string throug
 
 __Algorithmic Thinking:__ <p> This is a very simple algorithm that requires only a tiny bit of prerequisite knowledge regarding ASCII, and also some discretion when processing possible over 26 keys. Basically we just need to know that all chracters are stored as numbers in computer memory according to the ASCII standard: https://www.w3schools.com/charsets/ref_html_ascii.asp. And that the modulus function is our friend :)</p>
 
-<<<<<<< HEAD
-
 __code Implementation:__ <p>
  
 So first of all we need to split the string into characters to be processed individually and convert it to ASCII codes. Then we must check whether the character is either uppercase or lowercase(everything else should be kept the same) then add the key to it accordingly. But it is not a simple matter of simply doing ```char + key``` because for example, by shifting X by 3 we should get A. However, X(88) + 3 equals to 91 which is "\[". Thus what we should be doing is:
