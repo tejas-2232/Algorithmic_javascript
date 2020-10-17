@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Algorithmic_javascript
 <br>
 
@@ -1050,3 +1051,5 @@ __code Implementation:__ <p> </p>
 <hr>
 <hr>
 
+=======
+>>>>>>> master
