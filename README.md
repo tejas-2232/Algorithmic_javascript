@@ -979,7 +979,6 @@ __The challenge:__ <p> Given a string and a shift key, encrypt the string throug
 
 __Algorithmic Thinking:__ <p> This is a very simple algorithm that requires only a tiny bit of prerequisite knowledge regarding ASCII, and also some discretion when processing possible over 26 keys. Basically we just need to know that all chracters are stored as numbers in computer memory according to the ASCII standard: https://www.w3schools.com/charsets/ref_html_ascii.asp. And that the modulus function is our friend :)</p>
 
-
 __code Implementation:__ <p>
  
 So first of all we need to split the string into characters to be processed individually and convert it to ASCII codes. Then we must check whether the character is either uppercase or lowercase(everything else should be kept the same) then add the key to it accordingly. But it is not a simple matter of simply doing ```char + key``` because for example, by shifting X by 3 we should get A. However, X(88) + 3 equals to 91 which is "\[". Thus what we should be doing is:
@@ -990,9 +989,9 @@ So first of all we need to split the string into characters to be processed indi
 // the reverse is String.fromCharCode()
 const char = charCodeAt("X")
 const key = 3
-
-__code Implementation:__ <p> </p>
-
+```
+ </p>
+ 
 <hr>
 <hr>
 
@@ -1008,3 +1007,51 @@ __code Implementation:__ <p> </p>
 <hr>
 <hr>
 
+<b>12. Power Digit Sum </b>
+ 
+__The challenge:__ <p>Summing the digit from exponential results</p>
+
+__Algorithmic Thinking:__ <p>Given a number along with the exponential number whose exponential number can be a positive or negative number. after getting the exponential result, sum the number of digits from the exponential result. 
+ 
+Breaking it down:
+ * given number M and its exponential number N, so M x M ... x M, N times.
+ * iterate over the the result of exponentiation digit result.
+ * if the result contain fraction, ignore/skip the point (.) using "continue" keyword.
+ * accumulate (sum) in "sum" variabel
+ * return the result
+ 
+**Example**
+- 2<sup>15</sup> = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26
+- 2<sup>-3</sup> = 0.125 and the sum of its digits is 0 + 1 + 2 + 5 = 8
+</p>
+ 
+ 
+__code Implementation:__ <p> 
+```javascript
+// #1.Using Iterative and type casting approach
+ 
+// Step 1: given number M and its exponential number N, so M x M ... x M, N times.
+function powerDigitSum(num, pow){
+    let sum = 0
+
+    // Step 2: iterate over the the result of exponentiation digit result.
+    for (let digit of Math.pow(num, pow).toString()){
+
+    // Step 3: if the result contain fraction, ignore/skip the point (.) using "continue" keyword.
+      if (digit === '.'){  //checking for point (if exponential is negative)
+        continue;
+      }
+
+    // Step 4: accumulate (sum) in "sum" variabel
+      sum += digit*1 // times 1 is for converting string to number
+    }
+
+    // Step 5: return the result
+    return sum
+}
+ 
+console.log(powerDigitSum(2, 16)) // 65536 -> 6+5+5+3+6=25 
+console.log(powerDigitSum(2, -5)) // 0.03125 -> 0+0+3+1+2+5=11
+ 
+```
+</p>
