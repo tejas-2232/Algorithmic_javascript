@@ -10,7 +10,9 @@ exponential result.
 
 function powerDigitSum(num, pow){
     let sum = 0
-    for (let digit of Math.pow(num, pow).toString()){
+
+    // Step 1: Iterate over
+    for (let digit of Math.pow(num, pow).toString()){ 
       if (digit === '.'){  //checking for point (if exponential is negative)
         continue;
       }
