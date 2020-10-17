@@ -973,15 +973,9 @@ It's very simple ones you realize it.
 <hr>
 <hr>
 
-<<<<<<< HEAD
 <b>10. Caesar Cipher </b>
 
 __The challenge:__ <p> Given a string and a shift key, encrypt the string through Caesar Cipher.</p>
-=======
-<b>10. Power Digit Sum </b>
-
-__The challenge:__ <p>Summing the digit from exponential results</p>
->>>>>>> b1aab17... added 10. Power Digit Sum
 
 __Algorithmic Thinking:__ <p> This is a very simple algorithm that requires only a tiny bit of prerequisite knowledge regarding ASCII, and also some discretion when processing possible over 26 keys. Basically we just need to know that all chracters are stored as numbers in computer memory according to the ASCII standard: https://www.w3schools.com/charsets/ref_html_ascii.asp. And that the modulus function is our friend :)</p>
 
