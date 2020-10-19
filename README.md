@@ -990,21 +990,55 @@ So first of all we need to split the string into characters to be processed indi
 // the reverse is String.fromCharCode()
 const char = charCodeAt("X")
 const key = 3
+```
 
 __code Implementation:__ <p> </p>
 
 <hr>
 <hr>
 
-<b>11. Name </b>
+<b>11. Lexicographically equal or not </b>
 
-__The challenge:__ <p> </p>
+<p>Two strings are lexicographically equal if they are the same length and contain the same characters in the same positions.</p>
+
+__The challenge:__ <p>Given two strings of text, write an algorithm to check whether the strings are lexicographically equal or not.
+</p>
+
+```js
+ check_lexicographic("javascript","javascript")
+ // should return "true"
+```
+
+__Algorithmic Thinking:__ <p>
+* The function will recieve two parameters, the two strings of text which we have to compare. <br>
+* Now, compare the length of the strings and the positions of each character in the strings.<br>
+* Return whether they are lexicographically equal or not. </p>
 
 
-__Algorithmic Thinking:__ <p> </p>
+__code Implementation:__ <p>
+
+Code implementation is much strait forward. You just need to compare both the strings on the basis of their length and the positions of characters in the strings. <br>
+>1.Compare length <br>
+    2.Compare positions 
+    
+*1.Compare length:* <br>
+    
+* Check whether the given strings has same lenght or not by calling "check_length()" function.
+
+* There is a built-in method "length". Using "str.length" you can find length of string "str".
+
+```js
+ var str = "Hello World!";
+ var n = str.length;
+ // should return "12"
+```
 
 
-__code Implementation:__ <p> </p>
+
+</p>
+
+
+
 <hr>
 <hr>
 
