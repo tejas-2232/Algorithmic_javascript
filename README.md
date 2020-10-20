@@ -1033,6 +1033,27 @@ Code implementation is much strait forward. You just need to compare both the st
  // should return "12"
 ```
 
+*2.Compare positions:*
+<br>
+
+* Check whether the position of characters in the 2 given strings are same.
+* Convert the 2 strings into array of their character, for doing this we can use "split()" method. <br>
+* The *.split()* method is used to split a string into an array of characters. It receives one argument which specifies the separator that determines where every split occurs.
+
+* Using for loop we're gonna check every character of one string with the corresponding character of another string. <br> 
+* Have a look at the snippet below, you will get an idea.
+
+
+```js
+ for(let i=0;i<arr_str1.length;i++){
+            if (arr_str1[i]===arr_str2[i]){
+                count++;
+            }
+        }
+```
+
+
+
 
 
 </p>
