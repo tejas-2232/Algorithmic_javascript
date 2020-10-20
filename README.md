@@ -1052,8 +1052,20 @@ Code implementation is much strait forward. You just need to compare both the st
         }
 ```
 
+* Here, the "count" variable is initialised with "0" and it will increase by "1" whenever the characters are same.
 
 
+* Now, the last step is to check whether "count" variable is equal to the lenght of the strings or not, they are equal only when, when each and every characters of the strings are equal to their corresponding ones.
+
+
+```js
+ if (count===arr_str1.length){
+            return true;
+        }
+        else{
+            return false;
+        }
+```
 
 
 </p>
