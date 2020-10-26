@@ -81,6 +81,10 @@ __Algorithms practiced using JS__
 6. Pig Latin 
 7. Deep Compare
 8. Binary Search Tree
+9. Numbers to Roman Numerals
+10. Caesar Cipher
+11. Lexicographically equal or not
+12. Fizz Buzz
 
 ## Explanation
 <b>1. String reversing</b>
@@ -1075,3 +1079,217 @@ Code implementation is much strait forward. You just need to compare both the st
 <hr>
 <hr>
 
+
+<b>12. Fizz Buzz </b>
+
+<p>
+ 
+This is a relatively easy algorithm among the previously listed algorithms.
+
+__The challenge:__ <p>Given a number as an input, print out every integer from 1 to that number. <br> 
+ However, when the integer is divisible by 2, print out “Fizz”; when it’s divisible by 3, print out “Buzz”; <br>
+ when it’s divisible by both 2 and 3, print out “Fizz Buzz”.</p>
+
+
+__Algorithmic Thinking:__
+
+
+For this algorithm, first we will create a function which checks whether a number is whole number or not. 
+It will be useful while checking whether a no. is divisible by 2 or 3 or neither.
+
+Next, we will take the number submitted by the user and loop over from 1 to that number.
+
+If the iterating number (i) is divisible by 2 and 3, it will print out 'Fizz Buzz', if that is divisible by only 2, 'Fizz' will be printed out
+while on being divisible by 3, 'Buzz' will be printed out and at last, if its not divisible by 2 and 3, 
+the iterating number (i) itself will be printed out.
+
+
+__code Implementation:__ 
+
+We start by creating a function whole_num_check to check whether a given number n is a whole number or not.
+
+```js
+
+// function for checking whole number
+
+function whole_num_check(n) 
+{
+    const num_test = (n - Math.floor(n) ===0); 
+    // 3.40 - 3 = .40 === 0? false
+
+    return num_test; //true or false
+}
+
+```
+We select a html button tag with class 'submitBtn' and add an event listener to a function named 'fizzbuzz'.
+
+```js
+
+// click event 
+document.querySelector('.submitBtn').addEventListener('click', fizzbuzz);
+
+```
+
+Now, we create a function 'fizzbuzz'.
+
+```js
+
+function fizzbuzz() {
+
+ //code here
+
+};
+
+```
+
+Inside the fizzbuzz function, we select the user's input value and convert it into a number. Also, we select the div tag to print text.
+
+```js
+
+// getting the number value
+
+const number = parseInt(document.querySelector('input').value);
+
+let textDiv = document.querySelector('.integers');
+
+```
+We loop over from 1 to the user input and check if the divisiblity of the interating number i by 2 and 3, using the whole_num_check function. We insert text in DOM accordingly.
+
+```js
+// loop to print the integers 
+for(let i=1; i<= number; i++) {
+    
+    if(whole_num_check(i/2) && whole_num_check(i/3)) {
+
+        textDiv.textContent += '   Fizz Buzz ';
+
+    }
+    else if (whole_num_check(i/2)) {
+      
+        textDiv.textContent += '   Fizz ';
+
+    }
+    else if (whole_num_check(i/3)) {
+     
+        textDiv.textContent += '   Buzz ';
+        
+    };
+    else {
+        textDiv.textContent += i;
+
+    }
+
+};
+
+```
+</p>
+
+<hr>
+<hr>
+
+<b>12. Fizz Buzz </b>
+
+<p>
+ 
+This is a relatively easy algorithm among the previously listed algorithms.
+
+__The challenge:__ <p>Given a number as an input, print out every integer from 1 to that number. <br> 
+ However, when the integer is divisible by 2, print out “Fizz”; when it’s divisible by 3, print out “Buzz”; <br>
+ when it’s divisible by both 2 and 3, print out “Fizz Buzz”.</p>
+
+
+__Algorithmic Thinking:__
+
+
+For this algorithm, first we will create a function which checks whether a number is whole number or not. 
+It will be useful while checking whether a no. is divisible by 2 or 3 or neither.
+
+Next, we will take the number submitted by the user and loop over from 1 to that number.
+
+If the iterating number (i) is divisible by 2 and 3, it will print out 'Fizz Buzz', if that is divisible by only 2, 'Fizz' will be printed out
+while on being divisible by 3, 'Buzz' will be printed out and at last, if its not divisible by 2 and 3, 
+the iterating number (i) itself will be printed out.
+
+
+__code Implementation:__ 
+
+We start by creating a function whole_num_check to check whether a given number n is a whole number or not.
+
+```js
+
+// function for checking whole number
+
+function whole_num_check(n) 
+{
+    const num_test = (n - Math.floor(n) ===0); 
+    // 3.40 - 3 = .40 === 0? false
+
+    return num_test; //true or false
+}
+
+```
+We select a html button tag with class 'submitBtn' and add an event listener to a function named 'fizzbuzz'.
+
+```js
+
+// click event 
+document.querySelector('.submitBtn').addEventListener('click', fizzbuzz);
+
+```
+
+Now, we create a function 'fizzbuzz'.
+
+```js
+
+function fizzbuzz() {
+
+ //code here
+
+};
+
+```
+
+Inside the fizzbuzz function, we select the user's input value and convert it into a number. Also, we select the div tag to print text.
+
+```js
+
+// getting the number value
+
+const number = parseInt(document.querySelector('input').value);
+
+let textDiv = document.querySelector('.integers');
+
+```
+We loop over from 1 to the user input and check if the divisiblity of the interating number i by 2 and 3, using the whole_num_check function. We insert text in DOM accordingly.
+
+```js
+// loop to print the integers 
+for(let i=1; i<= number; i++) {
+    
+    if(whole_num_check(i/2) && whole_num_check(i/3)) {
+
+        textDiv.textContent += '   Fizz Buzz ';
+
+    }
+    else if (whole_num_check(i/2)) {
+      
+        textDiv.textContent += '   Fizz ';
+
+    }
+    else if (whole_num_check(i/3)) {
+     
+        textDiv.textContent += '   Buzz ';
+        
+    };
+    else {
+        textDiv.textContent += i;
+
+    }
+
+};
+
+```
+</p>
+
+<hr>
+<hr>
