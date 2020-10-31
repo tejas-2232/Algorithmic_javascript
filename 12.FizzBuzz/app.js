@@ -1,4 +1,3 @@
-
 // click event 
 document.querySelector('.submitBtn').addEventListener('click', fizzbuzz);
 
