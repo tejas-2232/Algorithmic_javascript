@@ -1,11 +1,13 @@
 // Usign First Intuitive Method
 
 function palindrome_check(text) {
-
-    var reversedText= text.toLowerCase().split(' ').reverse().join('')
-
-    return true === reversedText;
+    // for types other than string like int, float, double, etc
+    if(typeof text !== 'string') {
+        text = text.toString();
+    }
+    var reversedText= text.toLowerCase().split('').reverse().join('')
+    return text === reversedText;
     
 }
 
-console.log( palindrome_check("car"))
+console.log( palindrome_check(4.4))
