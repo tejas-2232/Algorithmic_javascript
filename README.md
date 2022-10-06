@@ -425,6 +425,24 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
         return text=== reverseText
     }
     ```
+    __Other Example:__
+    
+    ```js
+    // Usign First Intuitive Method
+
+    function palindrome_check(text) {
+    // for types other than string like int, float, double, etc
+    if(typeof text !== 'string') {
+        text = text.toString();
+    }
+    
+    var reversedText= text.toLowerCase().split('').reverse().join('')
+    return text === reversedText;
+    }
+
+   console.log( palindrome_check(4.4))
+    ```
+    
 Let's unveil the "mysteries":
 
 * Firstly, the function accepts the string that is to be tested
