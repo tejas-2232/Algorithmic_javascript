@@ -14,7 +14,7 @@
 
 <br>
 
-> ### [Sign In Here To start Hacking](https://hacktoberfest.digitalocean.com) <br>
+> ### [Sign In Here To start Hacking](https://hacktoberfest.com/) <br>
 
 <br>
 
@@ -55,7 +55,7 @@ In line with Hacktoberfest values **(Quantity is fun, quality is key)** , here y
 **Last but not least, one pull request to fix a typo is fine, but 5 pull requests to remove a stray whitespace is not.**
 <br>
 
-> ## Refer to [HacktoberFest](https://hacktoberfest.digitalocean.com/details) Website for detailed information
+> ## Refer to [HacktoberFest](https://hacktoberfest.com/) Website for detailed information
 
 <br>
 
@@ -425,6 +425,24 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
         return text=== reverseText
     }
     ```
+    __Other Example:__
+    
+    ```js
+    // Usign First Intuitive Method
+
+    function palindrome_check(text) {
+    // for types other than string like int, float, double, etc
+    if(typeof text !== 'string') {
+        text = text.toString();
+    }
+    
+    var reversedText= text.toLowerCase().split('').reverse().join('')
+    return text === reversedText;
+    }
+
+   console.log( palindrome_check(4.4))
+    ```
+    
 Let's unveil the "mysteries":
 
 * Firstly, the function accepts the string that is to be tested
