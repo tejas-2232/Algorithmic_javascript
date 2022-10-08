@@ -1,7 +1,7 @@
 # Algorithmic_javascript
 <br>
 
-> ## This is open-source Project and Part HACKTOBERFEST 2020 
+> ## This is open-source Project and Part HACKTOBERFEST 2022
 
 #### <font color='green'> Contribute to open source and make the world *A Better Place* </font>
 
