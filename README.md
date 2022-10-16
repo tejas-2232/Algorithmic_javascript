@@ -380,10 +380,10 @@ __Code Implementation:__
     function capSentence(text){
         let wordsArray =text.toLowerCase().split(' ')
         let capsArray = wordsArray.map(word=>{
-            return word.replce(word[0],word[0].toUpperCase())
+            return word.replace(word[0],word[0].toUpperCase())
         } )
 
-        return capsArray.joint(' ')
+        return capsArray.join(' ')
     }
     ```
 
@@ -420,7 +420,7 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
     ```js
     
     function palindromeCheck(text){
-        var reverseText= text.toLowercase().split(' ').reverse().join(' ' )
+        var reverseText= text.toLowerCase().split(' ').reverse().join(' ' )
 
         return text=== reverseText
     }
@@ -440,7 +440,7 @@ __code Implementation:__ <p>  In this challenge, we'd consider two, yet three wa
     return text === reversedText;
     }
 
-   console.log( palindrome_check(4.4))
+   console.log(palindrome_check(4.4))
     ```
     
 Let's unveil the "mysteries":
