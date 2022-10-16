@@ -85,6 +85,8 @@ __Algorithms practiced using JS__
 10. Caesar Cipher
 11. Lexicographically equal or not
 12. Fizz Buzz
+13. Shortest Path(Dijkstras)
+14. Plus Minus
 
 ## Explanation
 <b>1. String reversing</b>
@@ -1533,3 +1535,118 @@ console.log(dist);
 
 ```
 </p>
+
+
+<hr>
+<hr>
+
+
+<b>14. Plus Minus </b>
+
+In coding interviews we are asked Math-related problems. Hope this helps in any way. 
+
+__The challenge:__ <p> - Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with 6 places after the decimal. The function will not return a value; just prints to the console.</p> 
+
+```js 
+nums = [1, 1, 0, -1, -1] 
+output = 
+0.400000
+0.400000
+0.200000
+```
+
+__Algorithmic Thinking:__ <p>We will iterate over the input array once and keep track of the number of positive, negative and zeros. After we know how many of each we have we can perform the Math operation to divide by the length of the array and print out to 6 decimals. 
+</p>
+
+
+__code Implementation:__ <p> 
+1. Edge case: first need to check if input array contains any elements. If no elements we just print out 0. 
+
+    ```js 
+    if(nums.length === 0) console.log(0); 
+    ```
+
+2. Initialize variables to keep track of the positive, negative and zeros. We start all at 0 and progressively increment its count.
+
+    ```js 
+    let positive = 0;
+    let negative = 0;
+    let zeros = 0;
+    ```
+
+3. Iterate over input array once (i starts at 0 and runs until the end). 
+
+    ```js 
+    for(let i = 0; i < nums.length; i++) {
+        // next code 
+    }; 
+    ```
+
+4. Perform conditional statement and check if current element we're visiting is positive, negative or zero. 
+
+    If current element is positive ? we increase count of positive. 
+
+    If current element is negative ? we increase count of negative. 
+
+    If current element is zero ? we increase count of zeros.
+
+    ```js
+    // check for positive
+    if(nums[i] > 0) {
+        positive++; 
+    // check for negative
+    } else if(nums[i] < 0) {
+        negative++; 
+    // check for zeros
+    } else {
+        zeros++; 
+    }; 
+    ```
+
+5. After running the for loop we will begin to print out the ratios of positive, negative and zeros, with 6 decimal places. 
+
+    Notes: 
+
+    a) to get the ratio we will divide it by the length of input array
+
+    b) use ```.toFixed(6)``` method to specify 6 decimal places
+
+    ```js
+    console.log((positive/nums.length).toFixed(6); 
+    console.log((negative/nums.length).toFixed(6); 
+    console.log((zeros/nums.length).toFixed(6); 
+    ```
+
+6. Altogether... 
+
+    ```js
+    function plusMinus(nums) {
+        // edge case: if nums array is empty we return a 0
+        if(nums.length === 0) console.log(0); 
+        let positive = 0;
+        let negative = 0;
+        let zeros = 0; 
+        for(let i = 0; i < nums.length; i++) {
+            if(nums[i] > 0) {
+                positive++; 
+            } else if(nums[i] < 0) {
+                negative++; 
+            } else {
+                zeros++; 
+            }; 
+        };
+        console.log((positive/nums.length).toFixed(6)); 
+        console.log((negative/nums.length).toFixed(6)); 
+        console.log((zeros/nums.length).toFixed(6)); 
+    }; 
+
+    console.log(plusMinus([1, 1, 0, -1, -1])); 
+    // 0.400000
+    // 0.400000
+    // 0.200000
+    ```
+</p>
+
+
+<hr>
+<hr>
