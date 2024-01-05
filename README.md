@@ -1651,7 +1651,7 @@ __code Implementation:__ <p>
 <hr>
 <hr>
 
-<b>15. Valid Parantheses </b>
+<b>15. Valid Parentheses </b>
 
 <p> Valid parentheses refer to a sequence of parentheses – including round brackets (), square brackets [], and curly braces {} – that is properly nested and closed. In a valid expression, each opening parenthesis has a corresponding closing parenthesis, and they are arranged in a balanced manner.</p>
 
