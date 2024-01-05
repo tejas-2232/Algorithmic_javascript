@@ -1,10 +1,10 @@
 // INTRODUCTION 
 
-// Javascript implementation to check if string has valid number of parantheses
+// Javascript implementation to check if string has valid number of parentheses
 
 // THE CHALLENGE 
 
-// check whether the string has valid numbe of parantheses or not 
+// check whether the string has valid number of parentheses or not 
 
 // ALGORITHMIC THINKING 
 
