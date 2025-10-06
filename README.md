@@ -1,13 +1,13 @@
 # Algorithmic_javascript
 <br>
 
-> ## This is open-source Project and Part HACKTOBERFEST 2022
+> ## This is open-source Project and Part HACKTOBERFEST 2025
 
 #### <font color='green'> Contribute to open source and make the world *A Better Place* </font>
 
 #### Feel free to give a pull request. It should not be spam or invalid. It will be accepted and will be merged if it's valid PR
 
-##### PS:You will also WIN cool T-shirt from Digital Ocean If you do FOUR successful Pull Requests with.
+##### PS: You can WIN digital rewards and swag from Hacktoberfest if you complete FOUR successful Pull Requests.
 
 > # Hurry Up and Start Coding! :)
 
@@ -34,9 +34,9 @@
 
 #### Rules
 
-* To earn your Hacktoberfest tee or tree reward, you must register and make four valid pull requests (PRs) between October 1-31 (in any time zone). 
-* PRs can be made to any public repo on GitHub, not only the ones with issues labeled Hacktoberfest. If a maintainer reports your pull request as spam or behavior not in line with the project’s code of conduct, you will be ineligible to participate.
-* This year, the first 70,000 participants who successfully complete the challenge will be eligible to receive a prize. 
+* To earn your Hacktoberfest reward, you must register and make four valid pull requests (PRs) between October 1-31 (in any time zone). 
+* PRs can be made to participating public repos on GitHub. If a maintainer reports your pull request as spam or behavior not in line with the project’s code of conduct, you will be ineligible to participate.
+* Participants who successfully complete the challenge will be eligible to receive digital rewards and swag (subject to availability). 
 
 <br>
 
