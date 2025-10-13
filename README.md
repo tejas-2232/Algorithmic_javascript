@@ -1797,3 +1797,159 @@ if (validString("()]")) {
 
 <hr>
 <hr>
+<b>16. TRIE (PREFIX TREE)</b>
+
+<p>A Trie, or prefix tree, is an n-ary tree designed for efficient retrieval of strings. A path from the root to a leaf represents a word, and shared prefixes share nodes, allowing fast prefix-based queries. Searching for a string in a Trie takes O(m) time, where m is the length of the string. This is different from hash tables, which are efficient for exact matches but do not support prefix enumeration efficiently.</p>
+
+<p>Tries are particularly useful for problems where you need to match prefixes, autocomplete suggestions, or efficiently find all words sharing a common starting substring. Note that we are not focusing on exact string matching here (hash tables are better for that).</p>
+
+<b>CHALLENGE:</b>
+
+<p>Implement a Trie that supports the following operations for lowercase English letters:</p>
+<ul>
+  <li>insert(word)</li>
+  <li>search(word)</li>
+  <li>startsWith(prefix)</li>
+  <li>delete(word)</li>
+  <li>wordsWithPrefix(prefix)</li>
+</ul>
+
+<p>Example:</p>
+
+```js
+const trie = new Trie();
+trie.insert("app");
+trie.insert("apple");
+
+console.log(trie.search("app")); // true
+console.log(trie.search("appl")); // false
+console.log(trie.startsWith("ap")); // true
+console.log(trie.wordsWithPrefix("app")); // ["app","apple"]
+
+trie.delete("app");
+console.log(trie.search("app")); // false
+```
+
+<b>ALGORITHMIC THINKING:</b>
+
+<p>1. Initialize a <b>TrieNode</b> class where each node contains a value, 26 children slots (for 'a'-'z'), and a boolean <b>isEnd</b> flag.<br> 2. <b>Insert</b>: Traverse the Trie, creating nodes for missing letters, and mark the last node as <b>isEnd</b>.<br> 3. <b>Search</b>: Traverse nodes and return <b>true</b> if the last node is marked <b>isEnd</b>.<br> 4. <b>StartsWith</b>: Traverse nodes for a prefix and return <b>true</b> if the traversal succeeds.<br> 5. <b>Delete</b>: Recursively unmark the end-of-word flag and remove unnecessary child nodes.<br> 6. <b>WordsWithPrefix</b>: Traverse to the prefix node and recursively collect all words under it.</p>
+<b>CODE IMPLEMENTATION:</b>
+
+<p>Step 1: Initialize TrieNode and Trie classes</p>
+
+```
+class TrieNode {
+  constructor(val = null, isEnd = false) {
+    this.val = val;
+    this.children = new Array(26).fill(null);
+    this.isEnd = isEnd;
+  }
+}
+class Trie {
+  constructor() {
+    this.root = new TrieNode();
+  }
+}
+```
+
+<p>Step 2: Insert a word</p>
+
+```
+insert(word) {
+  let node = this.root;
+  for (let ch of word) {
+    const index = ch.charCodeAt(0) - 97;
+    if (!node.children[index]) node.children[index] = new TrieNode(ch);
+    node = node.children[index];
+  }
+  node.isEnd = true;
+}
+```
+
+<p>Step 3: Search a word</p>
+
+```
+search(word) {
+  let node = this.root;
+  for (let ch of word) {
+    const index = ch.charCodeAt(0) - 97;
+    if (!node.children[index]) return false;
+    node = node.children[index];
+  }
+  return node.isEnd === true;
+}
+```
+
+<p>Step 4: StartsWith a prefix</p>
+
+```
+startsWith(prefix) {
+  let node = this.root;
+  for (let ch of prefix) {
+    const index = ch.charCodeAt(0) - 97;
+    if (!node.children[index]) return false;
+    node = node.children[index];
+  }
+  return true;
+}
+```
+
+<p>Step 5: Delete a word</p>
+
+```
+delete(word) {
+  const _delete = (node, depth) => {
+    if (!node) return false;
+    if (depth === word.length) {
+      if (!node.isEnd) return false;
+      node.isEnd = false;
+      return node.children.every(c => c === null);
+    }
+    const index = word[depth].charCodeAt(0) - 97;
+    if (!node.children[index]) return false;
+    const shouldDelete = _delete(node.children[index], depth + 1);
+    if (shouldDelete) node.children[index] = null;
+    return !node.isEnd && node.children.every(c => c === null);
+  };
+  return _delete(this.root, 0);
+}
+```
+
+<p>Step 6: Words with prefix</p>
+
+```
+wordsWithPrefix(prefix) {
+  let node = this.root;
+  for (let ch of prefix) {
+    const index = ch.charCodeAt(0) - 97;
+    if (!node.children[index]) return [];
+    node = node.children[index];
+  }
+  const results = [];
+  const collect = (n, p) => {
+    if (n.isEnd) results.push(p);
+    for (let i = 0; i < 26; i++) {
+      if (n.children[i]) collect(n.children[i], p + String.fromCharCode(i + 97));
+    }
+  };
+  collect(node, prefix);
+  return results;
+}
+```
+
+<p>Step 7: Example usage</p>
+
+```
+const trie = new Trie();
+trie.insert("app");
+trie.insert("apple");
+
+console.log(trie.search("app"));          // true
+console.log(trie.wordsWithPrefix("app")); // ["app","apple"]
+
+trie.delete("app");
+console.log(trie.search("app"));          // false
+```
+
+<hr>
+<hr>
