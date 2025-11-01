@@ -1710,7 +1710,9 @@ __Algorithmic Thinking:__
 </p>
 
 
+
 __code Implementation:__ <p> 
+
 Step 1: Initialize an empty stack
 
     let stack = [];
@@ -1719,10 +1721,13 @@ Step 1: Initialize an empty stack
 
  Step 3: Check for opening brackets
 
+
+```
     if (ch == '(' || ch == '{' || ch == '[') {
             stack.push(ch); // Push opening bracket onto the stack
      }
 
+```
 
  Step 4: Check for closing brackets
 
