@@ -1776,7 +1776,7 @@ Let's Implement
         if (ch == '(' || ch == '{' || ch == '[') {
             stack.push(ch); // Push opening bracket onto the stack
         } else {
-    // Step 4: Check for closing brackets
+            // Step 4: Check for closing brackets
             if (
                 !stack.length ||
                 (ch == ')' && stack[stack.length - 1] !== '(') ||
