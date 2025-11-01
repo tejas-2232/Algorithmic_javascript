@@ -1731,17 +1731,20 @@ Step 1: Initialize an empty stack
 
  Step 4: Check for closing brackets
 
-            if (
-                !stack.length ||
-                (ch == ')' && stack[stack.length - 1] !== '(') ||
-                (ch == ']' && stack[stack.length - 1] !== '[') ||
-                (ch == '}' && stack[stack.length - 1] !== '{')
-            ) {
-                return false; // Invalid string, mismatched brackets
-            } else {
-                stack.pop(); // Pop the matching opening bracket from the stack
-            }
-
+    ```js
+    if(
+        !stack.length ||
+        (ch == ')' && stack[stack.length - 1] !== '(') ||
+        (ch == ']' && stack[stack.length - 1] !== '[') ||
+        (ch == '}' && stack[stack.length - 1] !== '{')
+        ) {
+    return false; // Invalid string, mismatched brackets
+    } 
+    else
+    {
+            stack.pop(); // Pop the matching opening bracket from the stack
+    }
+```
 
 Step 5: Check for remaining elements in the stack
 
