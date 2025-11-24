@@ -1657,20 +1657,23 @@ __code Implementation:__ <p>
 
 <p> Valid parentheses play a crucial role in programming, especially in expressions and syntax. Properly balanced parentheses are essential to ensure that code is interpreted correctly and avoids errors.</p>
 
-__The challenge:__ <p> - Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+__The Challenge:__ 
+
+<p> 
+* Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
 An input string is valid if:
 
-Open brackets must be closed by the same type of brackets.
-Open brackets must be closed in the correct order.
-Every close bracket has a corresponding open bracket of the same type.</p> 
+- Open brackets must be closed by the same type of brackets.
+- Open brackets must be closed in the correct order.
+- Every close bracket has a corresponding open bracket of the same type.</p> 
 
 
 s="()"
-output = Its a valid string
+output = It's a valid string
 
 s="()]"
-output= Its not a valid string
+output= It's not a valid string
 
 
 __Algorithmic Thinking:__ 
@@ -1711,8 +1714,9 @@ __Algorithmic Thinking:__
 
 
 
-__code Implementation:__ <p> 
+__Code Implementation:__
 
+<p> 
 Step 1: Initialize an empty stack
 
     let stack = [];
@@ -1893,7 +1897,7 @@ search(word) {
 }
 ```
 
-<p>Step 4: StartsWith a prefix</p>
+<p>Step 4: Starts With a prefix</p>
 
 ```
 startsWith(prefix) {
