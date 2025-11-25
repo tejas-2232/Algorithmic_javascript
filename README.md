@@ -94,16 +94,13 @@ __Algorithms practiced using JS__
 
 __The challenge:__ Given a string of text, write an algorithm that returns the text received in a reversed format. E.g
 
-<hr>
-
 ```js
  reverseString('algorithm')
  // should return "mhtirogla"
 ```
 
-<hr>
-
 __Algorithmic Thinking:__
+
 <p>
 The process here is quite simple and straight forward. Our function will receive only one parameter i.e the string to be reversed.
 
@@ -151,22 +148,23 @@ We will now explore ways to solve this challenge below. They are:
     }
 ```
 
-
-
 <hr>
 <hr>
+
 <b>2. Vowel counter </b>
 
 <p>Here we will be working with strings and arrays. The main challenge is given in The challenge section below.Let's find it </p>
 
-__The challenge:__ <p>You are given a string of text containing zero or more vowels in it,count the number of vowels that can be found in given text. For example:</p>
+__The challenge:__  <p>You are given a string of text containing zero or more vowels in it,count the number of vowels that can be found in given text. For example:</p>
 
     ```js
     vowelCounter("Hacktoberfest is very Nice") //will return 8
     ```
 
 
-__Algorithmic Thinking:__ <p> After reading the problem statement, __ given text of string__ must be in your mind. Let's go further to explore</p>
+__Algorithmic Thinking:__ 
+<p> After reading the problem statement, __ given text of string__ must be in your mind. Let's go further to explore
+</p>
 
 > A function is a block of organized, reusable code that is used to perform a single, related action. They may or may not accepts value as parameter for computational tasks. The values are also called as Arguments.
 
@@ -220,18 +218,14 @@ console.log(vowelcnt("i love HacktoberFest"))
 * If the condition is true, we increment the counter.
 * After looping through, counter is returned which gives the counte of vowels found in given string.
 
-
-
-
-
-
 <hr>
 <hr>
+
 <b>3. Finding the Most Recurring Characterg</b>
 
 <p> In this challenge, we will be dealing with strings, arrays and objects. We will learn to manipulate these data types using various methods that'd bring us to a working solution in the end.</p>
 
-__The challenge:__ Given a string of text, find and return the most recurring character. e.g
+__The Challenge:__ Given a string of text, find and return the most recurring character. e.g
 
 ```js
 maxRecurringChar('aabacada') // will return 'a'
@@ -266,7 +260,6 @@ for example: In string "success" <br>
 **Let's implement it**
 
 ```js
-
 /* 
 maxCharValue is used to store the maximum value yet encountered at the point of every iteration with the for---in loop.
 
@@ -299,7 +292,6 @@ function maxRecurringChar(text) {
 console.log(maxRecurringChar('success'))
 //  will return 's' because it is occuring 3 times
 ```
-
 
 <hr>
 <hr>
@@ -392,7 +384,6 @@ __Code Implementation:__
 <hr>
 <hr>
 
-
 <b>5. Palindromes </b>
    
 *What is a Palindrome:* A palindrome is a word, number, or other sequence of characters which reads the same backward as forward, such as "madam" or "racecar". <br>
@@ -465,7 +456,6 @@ Let's unveil the "mysteries":
 
 * Let's Jump to code.
 
-
     ```js
     function palindromeChecker(text) {
         let charArray = text.toLowerCase().split('')
@@ -489,7 +479,6 @@ method tests whether all elements pass the test or not which is implemented by p
 * In <font color="red" >.every()</font> method, it will return true if test passes all cases and will return false if it didn't.
 
 > Did you notice any problem?There is problem with this implementation if we think performanace wise
-
 
 
 3. Looping Through and Comparing Characters(Optimized):
@@ -591,7 +580,6 @@ At the last line, we use the .slice() method to manipulate the string to generat
 2. Declarative Approach
 
 In this approach, we implement a very concise solution to this challenge by combining the .replace() method and regular expressions to transform the received string into its Pig Latin equivalent.
-
 
 Our solution comprises mainly of two parts as analyzed below:
 
